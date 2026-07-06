@@ -1,91 +1,125 @@
 # 🚀 AI-Powered Enterprise Incident Resolution System
 
-An enterprise-grade AI Incident Resolution platform built using **n8n, Google Gemini, Pinecone Vector Database, and Retrieval-Augmented Generation (RAG)**.
+> An Enterprise AI-powered Incident Resolution platform built using **n8n**, **Google Gemini**, **Pinecone Vector Database**, and **Retrieval-Augmented Generation (RAG)** to provide intelligent, context-aware support using internal company documentation.
 
-This project demonstrates how modern AI workflows can automate enterprise incident support by retrieving knowledge from internal documentation and providing accurate troubleshooting guidance in real time.
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![n8n](https://img.shields.io/badge/n8n-AI%20Workflow-orange)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini-blue)
+![Pinecone](https://img.shields.io/badge/Pinecone-Vector%20Database-green)
+![RAG](https://img.shields.io/badge/RAG-Retrieval%20Augmented%20Generation-purple)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
-# 📌 Project Overview
+# 📖 Project Overview
 
-Enterprise organizations maintain thousands of pages of internal documentation, runbooks, troubleshooting guides, and operational procedures.
+Enterprise support teams often spend valuable time searching through internal documentation, runbooks, troubleshooting guides, and knowledge bases to resolve incidents.
 
-Searching these documents manually during production incidents is slow and inefficient.
+This project demonstrates how **Retrieval-Augmented Generation (RAG)** can be used to build an AI assistant capable of retrieving relevant enterprise documentation before generating accurate responses.
 
-This project solves that problem by creating an AI-powered knowledge assistant capable of:
-
-- Answering technical support questions
-- Retrieving relevant company documentation
-- Providing accurate troubleshooting steps
-- Reducing incident response time
-- Demonstrating a production-style Enterprise RAG architecture
+Instead of relying solely on Large Language Models, the system combines **semantic search**, **vector databases**, and **enterprise documentation** to produce context-aware answers.
 
 ---
 
 # 🏢 Business Scenario
 
-**ApexPay FinTech Solutions**
-
-ApexPay is a fictional enterprise payment company that provides secure payment gateway services for banks and merchants.
+This project simulates an enterprise payment company called **ApexPay FinTech Solutions**.
 
 The organization maintains internal documentation covering:
 
-- Company policies
-- API troubleshooting
-- Database incidents
-- Payment failures
-- Queue processing
-- Monitoring procedures
-- Escalation workflows
+- Company Overview
+- API Authentication
+- Database Troubleshooting
+- Payment Processing Errors
+- Monitoring Procedures
+- Escalation Guidelines
+- Incident Resolution Runbooks
 
-The AI assistant retrieves information from these documents and generates context-aware responses.
-
----
-
-# 🧠 Features
-
-✅ Enterprise Retrieval-Augmented Generation (RAG)
-
-✅ AI-powered Knowledge Assistant
-
-✅ Google Gemini LLM Integration
-
-✅ Pinecone Vector Database
-
-✅ Semantic Search
-
-✅ Enterprise Incident Runbooks
-
-✅ Conversation Memory
-
-✅ Real-time Question Answering
-
-✅ Production-style n8n Workflow
+Employees can ask technical questions in natural language and receive AI-generated answers based only on the company's internal knowledge.
 
 ---
 
-# ⚙️ Technology Stack
+# ✨ Features
+
+- 🤖 AI-powered Enterprise Assistant
+- 📚 Retrieval-Augmented Generation (RAG)
+- 🔍 Semantic Search
+- 🧠 Google Gemini Integration
+- 🗂 Pinecone Vector Database
+- 📄 Enterprise Knowledge Base
+- 💬 Natural Language Question Answering
+- 🔄 Automated n8n Workflow
+- ⚡ Context-aware Incident Resolution
+
+---
+
+# 🛠 Technology Stack
 
 | Technology | Purpose |
 |------------|---------|
 | n8n | Workflow Automation |
-| Google Gemini | Large Language Model |
+| Google Gemini 2.5 Flash | Large Language Model |
+| Google Gemini Embeddings | Vector Embeddings |
 | Pinecone | Vector Database |
-| RAG | Retrieval-Augmented Generation |
-| Google Embeddings | Semantic Embeddings |
-| Markdown | Knowledge Base |
+| Google Drive | Knowledge Base Storage |
 | Docker | Local Deployment |
+| Markdown | Enterprise Documentation |
 
 ---
 
-# 🏗 Architecture
+# 🏗 System Architecture
 
 ```
-User
+Employee Question
+        │
+        ▼
+AI Agent (n8n)
+        │
+        ▼
+Vector Store Tool
+        │
+        ▼
+Pinecone Semantic Search
+        │
+        ▼
+Relevant Enterprise Documents
+        │
+        ▼
+Google Gemini
+        │
+        ▼
+Context-Aware Response
+```
+
+---
+
+# 🔄 Workflow
+
+## Knowledge Ingestion Pipeline
+
+Google Drive
 
 ↓
 
-n8n Chat Trigger
+Read Documents
+
+↓
+
+Text Chunking
+
+↓
+
+Generate Embeddings
+
+↓
+
+Store in Pinecone Vector Database
+
+---
+
+## AI Query Pipeline
+
+Employee Question
 
 ↓
 
@@ -93,54 +127,40 @@ AI Agent
 
 ↓
 
-Vector Store Tool
+Retrieve Relevant Documents
 
 ↓
 
-Pinecone Vector Database
+Generate AI Response
 
 ↓
 
-Google Embeddings
-
-↓
-
-Google Gemini
-
-↓
-
-Enterprise Incident Response
-```
+Return Final Answer
 
 ---
 
 # 📂 Repository Structure
 
 ```
-AI-Incident-Resolution-System/
+AI-Incident-Resolution-System
 
+├── documentation
+│   ├── architecture
+│   └── research-notes
 │
-
-├── documentation/
-│   ├── architecture/
-│   └── research-notes/
+├── knowledge-base
 │
-├── runbooks/
-│   └── v1/
-│       ├── 01_Introduction.md
-│       ├── 02_Company_Overview.md
-│       ├── 03_Payment_Platform.md
-│       ├── 04_Incident_Severity.md
-│       ├── 05_API_Authentication.md
-│       ├── 06_Payment_Errors.md
-│       ├── 07_Database_Errors.md
-│       ├── 08_Webhook_Errors.md
-│       ├── 09_Queue_Errors.md
-│       ├── 10_Monitoring_Checklist.md
-│       ├── 11_Escalation_Procedure.md
-│       └── 12_Appendix.md
+├── runbooks
+│   └── v1
+│
+├── sample-incidents
+│
+├── screenshots
+│
+├── workflows
 │
 ├── README.md
+│
 └── .gitignore
 ```
 
@@ -148,20 +168,18 @@ AI-Incident-Resolution-System/
 
 # 💬 Example Questions
 
-The assistant can answer questions such as:
-
 - What is ApexPay?
 - How do I fix a 401 Unauthorized error?
-- How do I resolve Database Connection Timeout?
-- What causes payment failures?
-- How should API authentication issues be handled?
+- How do I resolve a database connection timeout?
+- How should payment failures be handled?
 - When should incidents be escalated?
+- What causes API authentication failures?
 
 ---
 
-# 📖 Knowledge Base
+# 📚 Knowledge Base
 
-The Enterprise Knowledge Base includes documentation for:
+The knowledge base currently includes:
 
 - Company Overview
 - Payment Platform
@@ -176,60 +194,39 @@ The Enterprise Knowledge Base includes documentation for:
 
 ---
 
-# 📸 Screenshots
+# 🎯 Skills Demonstrated
 
-## Enterprise Workflow
-
-> 
-
----
-
-## AI Chat
-
-> *
-
----
-
-## Pinecone Retrieval
-
-> 
-
----
-
-# 🎯 Learning Outcomes
-
-Through this project I learned:
-
-- Enterprise AI Workflow Design
 - Retrieval-Augmented Generation (RAG)
 - Semantic Search
 - Vector Databases
-- Google Gemini Integration
-- n8n AI Agents
+- AI Workflow Automation
 - Prompt Engineering
-- Enterprise Documentation Design
-- AI-powered Incident Resolution
+- Enterprise Documentation
+- Google Gemini API
+- Pinecone Integration
+- AI Agents
+- n8n Automation
 
 ---
 
 # 🚀 Future Improvements
 
 - Multi-Agent Architecture
-- Slack Integration
-- Jira Integration
-- Incident Ticket Automation
 - Automatic Incident Classification
+- Incident Priority Detection
+- Jira Integration
+- ServiceNow Integration
+- Slack Notifications
+- Email Alerts
 - Root Cause Analysis
-- Email Notifications
-- Dashboard & Analytics
+- Incident Dashboard
 
 ---
 
-# 👨‍💻 Author
+# 👩‍💻 Author
 
 **Yashadhi Jayasundara**
 
 
----
 
-# ⭐ If you found this project interesting, consider giving it a star.
+⭐ If you found this project useful, feel free to star the repository.
