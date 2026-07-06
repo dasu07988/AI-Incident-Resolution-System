@@ -180,19 +180,19 @@ The Enterprise Knowledge Base includes documentation for:
 
 ## Enterprise Workflow
 
-> *(Add workflow screenshot here)*
+> 
 
 ---
 
 ## AI Chat
 
-> *(Add chat demo screenshot here)*
+> *
 
 ---
 
 ## Pinecone Retrieval
 
-> *(Add Pinecone retrieval screenshot here)*
+> 
 
 ---
 
