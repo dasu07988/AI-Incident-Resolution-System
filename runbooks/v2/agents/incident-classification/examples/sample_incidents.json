@@ -1,0 +1,72 @@
+[
+  {
+    "incident_id": "INC-2026-0001",
+    "title": "Payment API returns HTTP 500",
+    "description": "Customers cannot complete payments. The checkout service returns HTTP 500 errors during payment processing.",
+    "service": "Payment Gateway",
+    "expected_category": "API"
+  },
+  {
+    "incident_id": "INC-2026-0002",
+    "title": "Database connection timeout",
+    "description": "Order Service cannot establish a connection to the MySQL database due to repeated timeout errors.",
+    "service": "Order Service",
+    "expected_category": "Database"
+  },
+  {
+    "incident_id": "INC-2026-0003",
+    "title": "Users unable to log in",
+    "description": "Users receive 'Invalid Token' errors when attempting to authenticate using Single Sign-On.",
+    "service": "Authentication Service",
+    "expected_category": "Authentication"
+  },
+  {
+    "incident_id": "INC-2026-0004",
+    "title": "VPN connectivity failure",
+    "description": "Remote employees cannot connect to the corporate VPN after the latest network update.",
+    "service": "Corporate Network",
+    "expected_category": "Network"
+  },
+  {
+    "incident_id": "INC-2026-0005",
+    "title": "High CPU usage on production server",
+    "description": "Production application server is running above 95% CPU utilization, causing slow response times.",
+    "service": "Application Server",
+    "expected_category": "Infrastructure"
+  },
+  {
+    "incident_id": "INC-2026-0006",
+    "title": "Suspicious login attempts detected",
+    "description": "Multiple failed login attempts from unknown IP addresses were detected across several user accounts.",
+    "service": "Identity Platform",
+    "expected_category": "Security"
+  },
+  {
+    "incident_id": "INC-2026-0007",
+    "title": "Cloud storage bucket unavailable",
+    "description": "Application cannot access cloud object storage due to permission errors.",
+    "service": "Cloud Storage",
+    "expected_category": "Cloud"
+  },
+  {
+    "incident_id": "INC-2026-0008",
+    "title": "Email notifications not delivered",
+    "description": "Transactional emails are not reaching customers after successful order confirmation.",
+    "service": "Email Service",
+    "expected_category": "Email"
+  },
+  {
+    "incident_id": "INC-2026-0009",
+    "title": "DNS resolution failure",
+    "description": "Internal services cannot resolve hostnames, resulting in application communication failures.",
+    "service": "DNS Infrastructure",
+    "expected_category": "DNS"
+  },
+  {
+    "incident_id": "INC-2026-0010",
+    "title": "Application configuration error",
+    "description": "Application failed to start after deployment because of an invalid configuration parameter.",
+    "service": "Customer Portal",
+    "expected_category": "Configuration"
+  }
+]
