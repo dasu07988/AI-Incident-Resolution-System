@@ -1,0 +1,92 @@
+[
+  {
+    "incident_id": "INC-2026-1001",
+    "incident_type": "Application",
+    "category": "Payment Gateway",
+    "description": "Customers cannot complete online payments due to HTTP 500 errors.",
+    "expected_severity": "Critical",
+    "expected_priority": "P1",
+    "expected_business_impact": "High"
+  },
+  {
+    "incident_id": "INC-2026-1002",
+    "incident_type": "Database",
+    "category": "Customer Database",
+    "description": "Primary production database is unavailable.",
+    "expected_severity": "Critical",
+    "expected_priority": "P1",
+    "expected_business_impact": "High"
+  },
+  {
+    "incident_id": "INC-2026-1003",
+    "incident_type": "Authentication",
+    "category": "Single Sign-On",
+    "description": "Employees cannot log into the internal portal.",
+    "expected_severity": "High",
+    "expected_priority": "P2",
+    "expected_business_impact": "High"
+  },
+  {
+    "incident_id": "INC-2026-1004",
+    "incident_type": "Network",
+    "category": "Corporate VPN",
+    "description": "Remote employees are unable to connect to the VPN.",
+    "expected_severity": "High",
+    "expected_priority": "P2",
+    "expected_business_impact": "High"
+  },
+  {
+    "incident_id": "INC-2026-1005",
+    "incident_type": "Cloud",
+    "category": "Cloud Storage",
+    "description": "Application cannot access cloud storage because of permission errors.",
+    "expected_severity": "Medium",
+    "expected_priority": "P3",
+    "expected_business_impact": "Medium"
+  },
+  {
+    "incident_id": "INC-2026-1006",
+    "incident_type": "Infrastructure",
+    "category": "Application Server",
+    "description": "CPU utilization remains above 95%, causing slow response times.",
+    "expected_severity": "Medium",
+    "expected_priority": "P3",
+    "expected_business_impact": "Medium"
+  },
+  {
+    "incident_id": "INC-2026-1007",
+    "incident_type": "Application",
+    "category": "Notification Service",
+    "description": "Order confirmation emails are delayed by several minutes.",
+    "expected_severity": "Low",
+    "expected_priority": "P4",
+    "expected_business_impact": "Low"
+  },
+  {
+    "incident_id": "INC-2026-1008",
+    "incident_type": "Application",
+    "category": "Customer Portal",
+    "description": "Incorrect configuration prevents a new feature from loading.",
+    "expected_severity": "Low",
+    "expected_priority": "P4",
+    "expected_business_impact": "Low"
+  },
+  {
+    "incident_id": "INC-2026-1009",
+    "incident_type": "Security",
+    "category": "Identity Platform",
+    "description": "Multiple suspicious login attempts detected from unknown IP addresses.",
+    "expected_severity": "Critical",
+    "expected_priority": "P1",
+    "expected_business_impact": "High"
+  },
+  {
+    "incident_id": "INC-2026-1010",
+    "incident_type": "Application",
+    "category": "Inventory System",
+    "description": "Inventory updates are delayed but users can continue working.",
+    "expected_severity": "Medium",
+    "expected_priority": "P3",
+    "expected_business_impact": "Medium"
+  }
+]
