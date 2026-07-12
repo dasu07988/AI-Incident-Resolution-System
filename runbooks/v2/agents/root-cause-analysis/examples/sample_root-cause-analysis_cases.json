@@ -1,0 +1,205 @@
+[
+  {
+    "incident": "Payment API returns HTTP 500 errors immediately after deployment. Database connection timeout alerts are also observed.",
+
+    "classification": {
+      "incident_type": "Application",
+      "category": "Payment Gateway"
+    },
+
+    "severity": {
+      "severity": "Critical",
+      "priority": "P1"
+    },
+
+    "knowledge": [
+      "Runbook APP-004: Database connection pool exhaustion may cause HTTP 500 errors after deployment.",
+      "Runbook DB-002: Database timeout detected."
+    ],
+
+    "expected_output": {
+      "primary_root_cause": "Database connection pool exhaustion",
+
+      "possible_causes": [
+        "Database timeout",
+        "Deployment configuration issue",
+        "Application connection pool misconfiguration"
+      ],
+
+      "confidence": 0.95,
+
+      "reasoning": "The symptoms strongly align with the retrieved runbooks describing database connection pool exhaustion immediately after deployment.",
+
+      "supporting_evidence": [
+        "HTTP 500 errors",
+        "Database timeout",
+        "Runbook APP-004",
+        "Runbook DB-002"
+      ],
+
+      "requires_human_validation": true
+    }
+  },
+
+  {
+    "incident": "Remote users cannot establish a secure VPN connection. VPN gateway timeout errors are reported.",
+
+    "classification": {
+      "incident_type": "Network",
+      "category": "VPN"
+    },
+
+    "severity": {
+      "severity": "High",
+      "priority": "P2"
+    },
+
+    "knowledge": [
+      "Runbook NET-002: VPN gateway outage.",
+      "Runbook NET-005: Firewall restrictions affecting VPN."
+    ],
+
+    "expected_output": {
+      "primary_root_cause": "VPN gateway outage",
+
+      "possible_causes": [
+        "Firewall restrictions",
+        "Authentication failure",
+        "Expired VPN certificate"
+      ],
+
+      "confidence": 0.93,
+
+      "reasoning": "The retrieved runbooks indicate a VPN gateway outage as the most probable explanation for gateway timeout errors.",
+
+      "supporting_evidence": [
+        "Gateway timeout",
+        "Runbook NET-002"
+      ],
+
+      "requires_human_validation": true
+    }
+  },
+
+  {
+    "incident": "Primary database server is unreachable. Database monitoring reports repeated timeout failures.",
+
+    "classification": {
+      "incident_type": "Database",
+      "category": "Database Availability"
+    },
+
+    "severity": {
+      "severity": "Critical",
+      "priority": "P1"
+    },
+
+    "knowledge": [
+      "Runbook DB-001: Database server outage.",
+      "Runbook INF-003: Storage failure."
+    ],
+
+    "expected_output": {
+      "primary_root_cause": "Database server outage",
+
+      "possible_causes": [
+        "Storage failure",
+        "Network connectivity issue",
+        "Database service crash"
+      ],
+
+      "confidence": 0.96,
+
+      "reasoning": "Monitoring evidence and retrieved runbooks strongly indicate that the database server is unavailable.",
+
+      "supporting_evidence": [
+        "Database unreachable",
+        "Runbook DB-001"
+      ],
+
+      "requires_human_validation": true
+    }
+  },
+
+  {
+    "incident": "CPU utilization remains above 98% on production Kubernetes worker nodes after a new deployment.",
+
+    "classification": {
+      "incident_type": "Infrastructure",
+      "category": "Kubernetes"
+    },
+
+    "severity": {
+      "severity": "High",
+      "priority": "P2"
+    },
+
+    "knowledge": [
+      "Runbook INF-004: Resource exhaustion.",
+      "Runbook APP-006: Deployment resource limits."
+    ],
+
+    "expected_output": {
+      "primary_root_cause": "Resource exhaustion following deployment",
+
+      "possible_causes": [
+        "Incorrect resource limits",
+        "Memory leak",
+        "Pod scheduling issue"
+      ],
+
+      "confidence": 0.91,
+
+      "reasoning": "The retrieved runbooks associate sustained CPU saturation after deployment with resource exhaustion and incorrect container limits.",
+
+      "supporting_evidence": [
+        "CPU 98%",
+        "Deployment completed",
+        "Runbook INF-004"
+      ],
+
+      "requires_human_validation": true
+    }
+  },
+
+  {
+    "incident": "Multiple users report authentication failures after an identity provider maintenance window.",
+
+    "classification": {
+      "incident_type": "Security",
+      "category": "Identity"
+    },
+
+    "severity": {
+      "severity": "High",
+      "priority": "P2"
+    },
+
+    "knowledge": [
+      "Runbook SEC-003: Identity provider outage.",
+      "Runbook APP-003: Authentication service failure."
+    ],
+
+    "expected_output": {
+      "primary_root_cause": "Identity provider service failure",
+
+      "possible_causes": [
+        "Authentication service configuration issue",
+        "Expired certificates",
+        "LDAP connectivity issue"
+      ],
+
+      "confidence": 0.94,
+
+      "reasoning": "The incident timing and retrieved runbooks strongly indicate an identity provider service failure after maintenance.",
+
+      "supporting_evidence": [
+        "Authentication failures",
+        "Maintenance window",
+        "Runbook SEC-003"
+      ],
+
+      "requires_human_validation": true
+    }
+  }
+]

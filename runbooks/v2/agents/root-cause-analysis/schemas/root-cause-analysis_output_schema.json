@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "primary_root_cause": {
+      "type": "string",
+      "description": "The single most probable technical root cause."
+    },
+    "possible_causes": {
+      "type": "array",
+      "description": "Additional possible root causes ranked by likelihood.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "maxItems": 5
+    },
+    "confidence": {
+      "type": "number",
+      "description": "Confidence score between 0.0 and 1.0.",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "reasoning": {
+      "type": "string",
+      "description": "Short technical explanation supporting the selected root cause."
+    },
+    "supporting_evidence": {
+      "type": "array",
+      "description": "Evidence extracted from the retrieved runbooks and incident details.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requires_human_validation": {
+      "type": "boolean",
+      "description": "Whether the result should be reviewed by a human engineer."
+    }
+  },
+  "required": [
+    "primary_root_cause",
+    "possible_causes",
+    "confidence",
+    "reasoning",
+    "supporting_evidence",
+    "requires_human_validation"
+  ],
+  "additionalProperties": false
+}
