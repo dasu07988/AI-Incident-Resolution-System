@@ -1,0 +1,42 @@
+[
+  {
+    "id": "RCA-001",
+    "name": "Payment API HTTP 500 After Deployment",
+    "priority": "Critical",
+    "incident": "Payment API returns HTTP 500 errors immediately after deployment. Database timeout alerts are observed.",
+    "expected_primary_root_cause": "Database connection pool exhaustion",
+    "expected_confidence_min": 0.90
+  },
+  {
+    "id": "RCA-002",
+    "name": "VPN Connection Failure",
+    "priority": "High",
+    "incident": "Remote users cannot establish VPN connections. Gateway timeout errors are reported.",
+    "expected_primary_root_cause": "VPN gateway outage",
+    "expected_confidence_min": 0.90
+  },
+  {
+    "id": "RCA-003",
+    "name": "Database Unreachable",
+    "priority": "Critical",
+    "incident": "Production database is unreachable. Monitoring reports repeated timeout failures.",
+    "expected_primary_root_cause": "Database server outage",
+    "expected_confidence_min": 0.90
+  },
+  {
+    "id": "RCA-004",
+    "name": "Kubernetes Resource Exhaustion",
+    "priority": "High",
+    "incident": "CPU utilization exceeds 98% across Kubernetes worker nodes after deployment.",
+    "expected_primary_root_cause": "Resource exhaustion following deployment",
+    "expected_confidence_min": 0.85
+  },
+  {
+    "id": "RCA-005",
+    "name": "Identity Provider Failure",
+    "priority": "High",
+    "incident": "Users cannot authenticate after an identity provider maintenance window.",
+    "expected_primary_root_cause": "Identity provider service failure",
+    "expected_confidence_min": 0.90
+  }
+]

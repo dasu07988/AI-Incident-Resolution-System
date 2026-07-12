@@ -1,15 +1,26 @@
+# Node
 node_modules/
 
-.env
+# Python
+.venv/
+__pycache__/
+*.pyc
 
+# Environment
+.env
 .env.local
 
+# Logs
 *.log
-
 *.tmp
 
-.DS_Store
+# Test / Debug scripts
+test_*.py
+list_models.py
 
+# OS
+.DS_Store
 Thumbs.db
 
+# VS Code
 .vscode/settings.json
