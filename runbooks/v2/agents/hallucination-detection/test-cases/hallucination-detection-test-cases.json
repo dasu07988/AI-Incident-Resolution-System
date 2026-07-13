@@ -1,0 +1,31 @@
+[
+  {
+    "test_case_id": "HD-001",
+    "description": "Supported root cause",
+    "input": {
+      "root_cause": "Database connection pool exhaustion",
+      "retrieved_knowledge": [
+        "Runbook APP-004"
+      ]
+    },
+    "expected": {
+      "hallucination_detected": false,
+      "evidence_supported": true
+    }
+  },
+  {
+    "test_case_id": "HD-002",
+    "description": "Unsupported Redis claim",
+    "input": {
+      "root_cause": "Redis cluster corruption",
+      "retrieved_knowledge": [
+        "Runbook APP-004",
+        "Runbook DB-002"
+      ]
+    },
+    "expected": {
+      "hallucination_detected": true,
+      "human_review_required": true
+    }
+  }
+]

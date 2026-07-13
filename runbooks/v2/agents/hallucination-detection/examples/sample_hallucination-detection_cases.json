@@ -1,0 +1,24 @@
+[
+  {
+    "root_cause": "Database connection pool exhaustion caused HTTP 500 errors.",
+    "retrieved_knowledge": [
+      "Runbook APP-004 states that database connection pool exhaustion may cause HTTP 500 errors after deployment."
+    ],
+    "expected_result": "Supported"
+  },
+  {
+    "root_cause": "Redis cluster corruption caused the incident.",
+    "retrieved_knowledge": [
+      "Runbook APP-004",
+      "Runbook DB-002"
+    ],
+    "expected_result": "Hallucination"
+  },
+  {
+    "root_cause": "Database timeout during peak load.",
+    "retrieved_knowledge": [
+      "Runbook DB-002 confirms database timeout during peak load."
+    ],
+    "expected_result": "Supported"
+  }
+]
