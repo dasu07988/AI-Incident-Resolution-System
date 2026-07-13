@@ -1,0 +1,32 @@
+[
+  {
+    "incident": "Payment API returns HTTP 500 errors after deployment.",
+    "severity": "Critical",
+    "priority": "P1",
+    "root_cause": "Database connection pool exhaustion",
+    "recommended_resolution": "Apply Runbook APP-004.",
+    "implementation_risk": "Low",
+    "expected_downtime": "2 minutes",
+    "requires_approval": true
+  },
+  {
+    "incident": "Corporate VPN unavailable.",
+    "severity": "High",
+    "priority": "P2",
+    "root_cause": "VPN gateway outage",
+    "recommended_resolution": "Apply Runbook NET-002.",
+    "implementation_risk": "Medium",
+    "expected_downtime": "5 minutes",
+    "requires_approval": true
+  },
+  {
+    "incident": "Authentication service unavailable.",
+    "severity": "Critical",
+    "priority": "P1",
+    "root_cause": "Identity Provider outage",
+    "recommended_resolution": "Apply Runbook AUTH-001.",
+    "implementation_risk": "Medium",
+    "expected_downtime": "3 minutes",
+    "requires_approval": true
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Slack Notification Output",
+  "type": "object",
+  "properties": {
+    "channel": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "requires_approval": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "channel",
+    "title",
+    "message",
+    "severity",
+    "priority",
+    "requires_approval"
+  ],
+  "additionalProperties": false
+}
