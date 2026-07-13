@@ -1,0 +1,29 @@
+[
+  {
+    "incident": "Payment API returns HTTP 500 errors after deployment.",
+    "classification": "Application",
+    "severity": "Critical",
+    "retrieval_quality": "Excellent",
+    "hallucination_detected": false,
+    "resolution_available": true,
+    "expected_next_action": "Send Notification"
+  },
+  {
+    "incident": "Corporate VPN unavailable.",
+    "classification": "Network",
+    "severity": "High",
+    "retrieval_quality": "Poor",
+    "hallucination_detected": false,
+    "resolution_available": false,
+    "expected_next_action": "Retry Retrieval"
+  },
+  {
+    "incident": "Authentication failures across multiple services.",
+    "classification": "Security",
+    "severity": "Critical",
+    "retrieval_quality": "Good",
+    "hallucination_detected": true,
+    "resolution_available": true,
+    "expected_next_action": "Human Review"
+  }
+]

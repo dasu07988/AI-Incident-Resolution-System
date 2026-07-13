@@ -1,0 +1,54 @@
+[
+  {
+    "test_case_id": "ORCH-001",
+    "description": "Successful workflow execution",
+    "input": {
+      "retrieval_quality": "Excellent",
+      "hallucination_detected": false,
+      "resolution_available": true
+    },
+    "expected": {
+      "workflow_status": "SUCCESS",
+      "next_action": "Send Notification"
+    }
+  },
+  {
+    "test_case_id": "ORCH-002",
+    "description": "Poor retrieval quality",
+    "input": {
+      "retrieval_quality": "Poor",
+      "hallucination_detected": false,
+      "resolution_available": false
+    },
+    "expected": {
+      "workflow_status": "RETRY",
+      "next_action": "Retry Retrieval"
+    }
+  },
+  {
+    "test_case_id": "ORCH-003",
+    "description": "Hallucination detected",
+    "input": {
+      "retrieval_quality": "Good",
+      "hallucination_detected": true,
+      "resolution_available": true
+    },
+    "expected": {
+      "workflow_status": "ESCALATED",
+      "next_action": "Human Review"
+    }
+  },
+  {
+    "test_case_id": "ORCH-004",
+    "description": "Missing analysis output",
+    "input": {
+      "retrieval_quality": "Excellent",
+      "hallucination_detected": false,
+      "resolution_available": false
+    },
+    "expected": {
+      "workflow_status": "FAILED",
+      "next_action": "Stop Workflow"
+    }
+  }
+]

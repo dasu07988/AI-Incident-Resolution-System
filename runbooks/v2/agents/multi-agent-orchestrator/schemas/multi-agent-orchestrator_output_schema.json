@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Enterprise Multi-Agent Orchestrator Output",
+  "type": "object",
+  "properties": {
+    "workflow_status": {
+      "type": "string",
+      "enum": [
+        "SUCCESS",
+        "FAILED",
+        "RETRY",
+        "ESCALATED"
+      ]
+    },
+    "next_action": {
+      "type": "string",
+      "enum": [
+        "Continue",
+        "Retry Retrieval",
+        "Retry Analysis",
+        "Human Review",
+        "Send Notification",
+        "Stop Workflow"
+      ]
+    },
+    "retry_required": {
+      "type": "boolean"
+    },
+    "human_review_required": {
+      "type": "boolean"
+    },
+    "notification_required": {
+      "type": "boolean"
+    },
+    "completed_agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "failed_agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "execution_summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workflow_status",
+    "next_action",
+    "retry_required",
+    "human_review_required",
+    "notification_required",
+    "completed_agents",
+    "failed_agents",
+    "execution_summary"
+  ],
+  "additionalProperties": false
+}
