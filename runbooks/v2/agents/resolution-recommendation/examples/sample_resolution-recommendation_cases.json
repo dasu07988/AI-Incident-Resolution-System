@@ -1,0 +1,86 @@
+[
+  {
+    "incident": "Payment API returns HTTP 500 errors after deployment.",
+    "severity": "Critical",
+    "priority": "P1",
+    "primary_root_cause": "Database connection pool exhaustion",
+    "possible_causes": [
+      "Database timeout during peak load"
+    ],
+    "recommended_resolution": "Increase the database connection pool configuration and restart the application service.",
+    "recommended_runbook": "APP-004",
+    "estimated_resolution_time": "20-30 minutes",
+    "automation_possible": false,
+    "rollback_required": false,
+    "recommended_priority": "P1",
+    "requires_human_approval": true
+  },
+  {
+    "incident": "Users cannot establish VPN connections to the corporate network.",
+    "severity": "High",
+    "priority": "P2",
+    "primary_root_cause": "VPN gateway outage",
+    "possible_causes": [
+      "Firewall restrictions",
+      "Authentication service failure"
+    ],
+    "recommended_resolution": "Restore VPN gateway availability following enterprise network procedures.",
+    "recommended_runbook": "NET-002",
+    "estimated_resolution_time": "30-45 minutes",
+    "automation_possible": false,
+    "rollback_required": false,
+    "recommended_priority": "P2",
+    "requires_human_approval": true
+  },
+  {
+    "incident": "Authentication service rejects all user logins.",
+    "severity": "Critical",
+    "priority": "P1",
+    "primary_root_cause": "Identity provider outage",
+    "possible_causes": [
+      "Expired certificates",
+      "LDAP connectivity failure"
+    ],
+    "recommended_resolution": "Restore identity provider availability according to authentication recovery procedures.",
+    "recommended_runbook": "AUTH-001",
+    "estimated_resolution_time": "30 minutes",
+    "automation_possible": false,
+    "rollback_required": false,
+    "recommended_priority": "P1",
+    "requires_human_approval": true
+  },
+  {
+    "incident": "Kubernetes application pods continuously restart.",
+    "severity": "High",
+    "priority": "P2",
+    "primary_root_cause": "Application configuration error",
+    "possible_causes": [
+      "Invalid environment variables",
+      "Failed health checks"
+    ],
+    "recommended_resolution": "Restore the validated application configuration and redeploy the affected workload.",
+    "recommended_runbook": "K8S-003",
+    "estimated_resolution_time": "15-20 minutes",
+    "automation_possible": true,
+    "rollback_required": true,
+    "recommended_priority": "P2",
+    "requires_human_approval": true
+  },
+  {
+    "incident": "Database response time increased significantly during peak traffic.",
+    "severity": "Medium",
+    "priority": "P3",
+    "primary_root_cause": "Database query contention",
+    "possible_causes": [
+      "High concurrent workload",
+      "Resource saturation"
+    ],
+    "recommended_resolution": "Apply the approved database performance optimization procedure.",
+    "recommended_runbook": "DB-002",
+    "estimated_resolution_time": "45-60 minutes",
+    "automation_possible": false,
+    "rollback_required": false,
+    "recommended_priority": "P3",
+    "requires_human_approval": true
+  }
+]
