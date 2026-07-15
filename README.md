@@ -1,233 +1,954 @@
-# 🚀 AI-Powered Enterprise Incident Resolution System
+<div align="center">
 
-> An Enterprise AI-powered Incident Resolution platform built using **n8n**, **Google Gemini**, **Pinecone Vector Database**, and **Retrieval-Augmented Generation (RAG)** to provide intelligent, context-aware support using internal company documentation.
+# 🚀 Enterprise AI Incident Resolution System
 
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![n8n](https://img.shields.io/badge/n8n-AI%20Workflow-orange)
-![Google Gemini](https://img.shields.io/badge/Google-Gemini-blue)
-![Pinecone](https://img.shields.io/badge/Pinecone-Vector%20Database-green)
-![RAG](https://img.shields.io/badge/RAG-Retrieval%20Augmented%20Generation-purple)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+### Intelligent Multi-Agent AI Orchestrator for Enterprise IT Incident Management
+
+<p align="center">
+
+![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
+
+![AI](https://img.shields.io/badge/AI-Google%20Gemini-blue?style=for-the-badge)
+
+![Automation](https://img.shields.io/badge/n8n-Workflow-orange?style=for-the-badge)
+
+![RAG](https://img.shields.io/badge/RAG-Pinecone-success?style=for-the-badge)
+
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge)
+
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
+
+</p>
+
+### 🤖 Multi-Agent AI • 🧠 RAG • 📚 Enterprise Knowledge Base • ⚡ Workflow Automation
+
+---
+
+**Enterprise AI Incident Resolution System** is an intelligent **Multi-Agent AI platform** that automates enterprise incident management using **Google Gemini**, **Pinecone Vector Database**, **Retrieval-Augmented Generation (RAG)** and **n8n Workflow Automation**.
+
+Instead of relying on a single AI prompt, the system orchestrates multiple specialized AI agents that collaboratively classify incidents, assess severity, retrieve enterprise knowledge, identify root causes, validate AI reasoning, recommend resolutions, and generate enterprise-ready notifications.
+
+</div>
 
 ---
 
 # 📖 Project Overview
 
-Enterprise support teams often spend valuable time searching through internal documentation, runbooks, troubleshooting guides, and knowledge bases to resolve incidents.
+Modern organizations handle hundreds or even thousands of IT incidents every day.
 
-This project demonstrates how **Retrieval-Augmented Generation (RAG)** can be used to build an AI assistant capable of retrieving relevant enterprise documentation before generating accurate responses.
+Traditional incident management often requires engineers to manually:
 
-Instead of relying solely on Large Language Models, the system combines **semantic search**, **vector databases**, and **enterprise documentation** to produce context-aware answers.
+- Search internal documentation
+- Analyze logs
+- Identify root causes
+- Recommend fixes
+- Notify responsible teams
+
+This process is:
+
+- Time-consuming
+- Error-prone
+- Inconsistent
+- Difficult to scale
+
+This project demonstrates how **Enterprise Multi-Agent AI** can automate the complete incident analysis lifecycle using Retrieval-Augmented Generation (RAG) and AI workflow orchestration.
+
+Instead of a traditional chatbot, this system acts as an **AI Incident Resolution Copilot**, capable of reasoning over enterprise documentation before generating context-aware recommendations.
+
+---
+
+# 🎯 Project Objectives
+
+The primary objectives of this system are to:
+
+- Automatically classify enterprise incidents
+- Determine incident severity and business impact
+- Retrieve relevant enterprise knowledge using semantic search
+- Evaluate retrieved knowledge quality
+- Detect multiple incident intents
+- Perform AI-powered root cause analysis
+- Detect AI hallucinations before generating recommendations
+- Recommend intelligent incident resolutions
+- Generate enterprise-ready incident notifications
+- Reduce Mean Time To Resolution (MTTR)
 
 ---
 
 # 🏢 Business Scenario
 
-This project simulates an enterprise payment company called **ApexPay FinTech Solutions**.
+This project simulates an enterprise financial technology company called **ApexPay FinTech Solutions**.
 
 The organization maintains internal documentation covering:
 
-- Company Overview
+- Payment Gateway Architecture
 - API Authentication
-- Database Troubleshooting
+- Database Operations
 - Payment Processing Errors
+- Incident Runbooks
 - Monitoring Procedures
 - Escalation Guidelines
-- Incident Resolution Runbooks
+- Disaster Recovery Procedures
+- Infrastructure Documentation
+- Operational Best Practices
 
-Employees can ask technical questions in natural language and receive AI-generated answers based only on the company's internal knowledge.
-
----
-
-# ✨ Features
-
-- 🤖 AI-powered Enterprise Assistant
-- 📚 Retrieval-Augmented Generation (RAG)
-- 🔍 Semantic Search
-- 🧠 Google Gemini Integration
-- 🗂 Pinecone Vector Database
-- 📄 Enterprise Knowledge Base
-- 💬 Natural Language Question Answering
-- 🔄 Automated n8n Workflow
-- ⚡ Context-aware Incident Resolution
+Employees submit incidents through a webhook, and the AI system automatically analyzes the issue using internal organizational knowledge before recommending a solution.
 
 ---
 
-# 🛠 Technology Stack
+# ✨ Key Features
 
-| Technology | Purpose |
-|------------|---------|
-| n8n | Workflow Automation |
-| Google Gemini 2.5 Flash | Large Language Model |
-| Google Gemini Embeddings | Vector Embeddings |
-| Pinecone | Vector Database |
-| Google Drive | Knowledge Base Storage |
-| Docker | Local Deployment |
-| Markdown | Enterprise Documentation |
+## 🤖 Multi-Agent AI Architecture
+
+Nine specialized AI agents collaborate together instead of relying on one large prompt.
 
 ---
 
-# 🏗 System Architecture
+## 📚 Retrieval-Augmented Generation (RAG)
 
+Retrieves relevant enterprise knowledge from Pinecone before generating responses.
+
+---
+
+## 🔍 Semantic Search
+
+Uses vector embeddings for context-aware knowledge retrieval.
+
+---
+
+## 🧠 Google Gemini Integration
+
+Powered by Google's latest Gemini models for enterprise reasoning.
+
+---
+
+## 📊 Incident Classification
+
+Automatically categorizes enterprise incidents into relevant operational domains.
+
+---
+
+## 🚨 Severity Assessment
+
+Determines:
+
+- Business Impact
+- Incident Severity
+- SLA Response Time
+- Affected Users
+- Confidence Score
+
+---
+
+## 🧩 Root Cause Analysis
+
+AI identifies the most probable technical root cause using enterprise knowledge.
+
+---
+
+## 📑 Resolution Recommendation
+
+Generates step-by-step remediation guidance.
+
+---
+
+## 🛡 Hallucination Detection
+
+Validates AI-generated responses before final recommendations.
+
+---
+
+## 📢 Enterprise Notification Generation
+
+Automatically prepares incident notifications for engineering teams.
+
+---
+
+## 📈 Knowledge Quality Evaluation
+
+Evaluates whether retrieved knowledge is:
+
+- Relevant
+- Complete
+- Reliable
+
+before allowing downstream AI reasoning.
+
+---
+
+## 🧠 Multi Intent Detection
+
+Detects incidents containing multiple failures or cascading issues.
+
+---
+
+# 🏗 Enterprise AI Architecture
+
+```text
+                    Enterprise Incident
+
+                           │
+                           ▼
+
+                Agent 1 — Incident Classification
+
+                           │
+                           ▼
+
+               Agent 2 — Severity Assessment
+
+                           │
+                           ▼
+
+            Agent 3 — Knowledge Retrieval (RAG)
+
+                           │
+                           ▼
+
+             Agent 7 — Knowledge Evaluation
+
+                           │
+                           ▼
+
+               Knowledge Quality Validation
+
+                           │
+                           ▼
+
+              Agent 8 — Multi Intent Detection
+
+                           │
+                           ▼
+
+               Agent 4 — Root Cause Analysis
+
+                           │
+                           ▼
+
+          Agent 9 — Hallucination Detection
+
+                           │
+                           ▼
+
+             Hallucination Validation Check
+
+                           │
+                           ▼
+
+        Agent 5 — Resolution Recommendation
+
+                           │
+                           ▼
+
+         Agent 6 — Notification Generation
+
+                           │
+                           ▼
+
+                JSON Response via Webhook
 ```
-Employee Question
-        │
-        ▼
-AI Agent (n8n)
-        │
-        ▼
-Vector Store Tool
-        │
-        ▼
-Pinecone Semantic Search
-        │
-        ▼
-Relevant Enterprise Documents
-        │
-        ▼
-Google Gemini
-        │
-        ▼
-Context-Aware Response
+
+---
+
+# 🤖 Multi-Agent Architecture
+
+| Agent | Responsibility | Status |
+|--------|---------------|--------|
+| Agent 1 | Incident Classification | ✅ |
+| Agent 2 | Severity Assessment | ✅ |
+| Agent 3 | Knowledge Retrieval (RAG) | ✅ |
+| Agent 4 | Root Cause Analysis | ✅ |
+| Agent 5 | Resolution Recommendation | ✅ |
+| Agent 6 | Notification Generation | ✅ |
+| Agent 7 | Knowledge Quality Evaluation | ✅ |
+| Agent 8 | Multi Intent Detection | ✅ |
+| Agent 9 | Hallucination Detection | ✅ |
+
+---
+
+# 🎯 Enterprise Workflow
+
+```text
+Incident
+
+↓
+
+Classification
+
+↓
+
+Severity Assessment
+
+↓
+
+Knowledge Retrieval (Pinecone)
+
+↓
+
+Knowledge Evaluation
+
+↓
+
+Multi Intent Detection
+
+↓
+
+Root Cause Analysis
+
+↓
+
+Hallucination Detection
+
+↓
+
+Resolution Recommendation
+
+↓
+
+Notification Generation
+
+↓
+
+Webhook Response
 ```
 
 ---
+# ⚙ Technology Stack
 
-# 🔄 Workflow
+This project combines modern AI technologies, workflow automation, vector databases, and enterprise knowledge retrieval to build a production-style intelligent incident resolution system.
 
-## Knowledge Ingestion Pipeline
-
-Google Drive
-
-↓
-
-Read Documents
-
-↓
-
-Text Chunking
-
-↓
-
-Generate Embeddings
-
-↓
-
-Store in Pinecone Vector Database
-
----
-
-## AI Query Pipeline
-
-Employee Question
-
-↓
-
-AI Agent
-
-↓
-
-Retrieve Relevant Documents
-
-↓
-
-Generate AI Response
-
-↓
-
-Return Final Answer
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| AI Model | Google Gemini | Enterprise reasoning and decision making |
+| AI Framework | Multi-Agent Architecture | Specialized AI task orchestration |
+| Workflow Engine | n8n | AI workflow automation |
+| Vector Database | Pinecone | Semantic knowledge retrieval |
+| Embeddings | Google Gemini Embeddings | Document vectorization |
+| Knowledge Base | Markdown Documents | Enterprise documentation |
+| Runtime | Docker | Containerized deployment |
+| API | REST Webhook | Incident submission |
+| Language | JavaScript | Workflow logic |
+| Data Format | JSON | Agent communication |
 
 ---
 
 # 📂 Repository Structure
 
-```
-AI-Incident-Resolution-System
+```text
+Enterprise-AI-Incident-Resolution-System
 
-├── documentation
-│   ├── architecture
-│   └── research-notes
 │
-├── knowledge-base
+├── workflows/
+│   ├── Enterprise AI Orchestrator.json
+│   ├── Agent 1 - Classification.json
+│   ├── Agent 2 - Severity Assessment.json
+│   ├── Agent 3 - Knowledge Retrieval.json
+│   ├── Agent 4 - Root Cause Analysis.json
+│   ├── Agent 5 - Resolution Recommendation.json
+│   ├── Agent 6 - Notification Generator.json
+│   ├── Agent 7 - Knowledge Evaluation.json
+│   ├── Agent 8 - Multi Intent Detection.json
+│   └── Agent 9 - Hallucination Detection.json
 │
-├── runbooks
-│   └── v1
+├── knowledge-base/
+│   ├── payment-api.md
+│   ├── authentication.md
+│   ├── database.md
+│   ├── monitoring.md
+│   ├── escalation.md
+│   ├── networking.md
+│   └── ...
 │
-├── sample-incidents
+├── screenshots/
 │
-├── screenshots
+├── architecture/
 │
-├── workflows
+├── docker/
 │
 ├── README.md
 │
-└── .gitignore
+└── LICENSE
 ```
 
 ---
 
-# 💬 Example Questions
+# 📚 Enterprise Knowledge Base
 
-- What is ApexPay?
-- How do I fix a 401 Unauthorized error?
-- How do I resolve a database connection timeout?
-- How should payment failures be handled?
-- When should incidents be escalated?
-- What causes API authentication failures?
+The Retrieval-Augmented Generation (RAG) pipeline searches an enterprise knowledge base containing internal operational documentation.
+
+Current knowledge includes:
+
+- Company Overview
+- Payment Platform Architecture
+- Incident Severity Matrix
+- Authentication Procedures
+- API Troubleshooting
+- Database Failures
+- Queue Failures
+- DNS Issues
+- VPN Troubleshooting
+- Monitoring Procedures
+- Escalation Guidelines
+- Disaster Recovery
+- Incident Runbooks
+- Operational Best Practices
+
+Every document is embedded using **Google Gemini Embeddings** and stored inside **Pinecone Vector Database** for semantic retrieval.
 
 ---
 
-# 📚 Knowledge Base
+# 🔄 Complete Workflow Execution
 
-The knowledge base currently includes:
+The complete AI orchestration pipeline follows the sequence below.
 
-- Company Overview
-- Payment Platform
-- Incident Severity
-- API Authentication
-- Payment Errors
-- Database Errors
-- Queue Errors
-- Webhook Errors
-- Monitoring Checklist
-- Escalation Procedure
+```text
+Receive Enterprise Incident
+
+↓
+
+Incident Classification
+
+↓
+
+Severity Assessment
+
+↓
+
+Knowledge Retrieval (RAG)
+
+↓
+
+Knowledge Quality Evaluation
+
+↓
+
+Multi Intent Detection
+
+↓
+
+Root Cause Analysis
+
+↓
+
+Hallucination Detection
+
+↓
+
+Resolution Recommendation
+
+↓
+
+Notification Generation
+
+↓
+
+Webhook Response
+```
+
+---
+
+# 📡 REST API
+
+The Enterprise AI Incident Resolution System exposes a Webhook endpoint for incident submission.
+
+## Endpoint
+
+```http
+POST /webhook/enterprise-ai-orchestrator
+```
+
+---
+
+## Sample Request
+
+```json
+{
+  "incident_id": "INC-1001",
+  "title": "Payment API Down",
+  "description": "Customers receive HTTP 500 Internal Server Error while processing payments.",
+  "service": "Payment Gateway"
+}
+```
+
+---
+
+## Sample Response
+
+```json
+{
+  "classification": "Payment System",
+
+  "severity": "Critical",
+
+  "business_impact": "High",
+
+  "knowledge_retrieval": "Relevant",
+
+  "root_cause": "Database connection pool exhausted",
+
+  "recommended_resolution": "Restart payment service and restore database connectivity.",
+
+  "notification_title": "URGENT: Payment API Service Degradation",
+
+  "priority": "Critical",
+
+  "target_team": "Application Team"
+}
+```
+
+---
+
+# 🛠 Installation Guide
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Enterprise-AI-Incident-Resolution-System.git
+```
+
+---
+
+## 2. Navigate into the project
+
+```bash
+cd Enterprise-AI-Incident-Resolution-System
+```
+
+---
+
+## 3. Start Docker
+
+```bash
+docker compose up -d
+```
+
+---
+
+## 4. Open n8n
+
+```
+http://localhost:5678
+```
+
+---
+
+## 5. Import Workflows
+
+Import all JSON workflow files located in the **workflows/** directory.
+
+---
+
+## 6. Configure Credentials
+
+Create credentials for:
+
+- Google Gemini API
+- Pinecone
+- Google Drive (optional)
+
+---
+
+## 7. Upload Enterprise Knowledge
+
+Run the ingestion workflow to:
+
+- Read Markdown files
+- Chunk documents
+- Generate embeddings
+- Store vectors inside Pinecone
+
+---
+
+## 8. Start the Enterprise AI Orchestrator
+
+Activate the main workflow and send incidents using the webhook endpoint.
+
+---
+
+# 🔍 AI Processing Pipeline
+
+## Stage 1
+
+Incident Classification
+
+↓
+
+Severity Assessment
+
+---
+
+## Stage 2
+
+Knowledge Retrieval
+
+↓
+
+Knowledge Evaluation
+
+---
+
+## Stage 3
+
+Multi Intent Detection
+
+↓
+
+Root Cause Analysis
+
+↓
+
+Hallucination Detection
+
+---
+
+## Stage 4
+
+Resolution Recommendation
+
+↓
+
+Notification Generation
+
+↓
+
+Webhook Response
+
+---
+
+# 🧠 AI Reasoning Flow
+
+```text
+Enterprise Incident
+
+↓
+
+Semantic Search
+
+↓
+
+Retrieve Relevant Knowledge
+
+↓
+
+Context Injection
+
+↓
+
+Google Gemini Reasoning
+
+↓
+
+Root Cause Analysis
+
+↓
+
+Hallucination Validation
+
+↓
+
+Resolution Recommendation
+
+↓
+
+Enterprise Notification
+```
+
+---
+
+# 📊 Enterprise Benefits
+
+The system provides several operational advantages.
+
+- Faster Incident Resolution
+- Reduced Mean Time To Resolution (MTTR)
+- AI-assisted Decision Support
+- Consistent Troubleshooting
+- Enterprise Knowledge Reuse
+- Reduced Human Error
+- Automated Incident Analysis
+- Intelligent Resolution Recommendations
+- Standardized Notifications
+- Improved Operational Efficiency
+---
+
+# 📸 Project Demonstration
+
+## Workflow Execution
+
+> Add screenshots of your n8n workflow execution.
+
+### Enterprise AI Orchestrator
+
+![Enterprise Orchestrator](screenshots/orchestrator.png)
+
+---
+
+### Multi-Agent Workflow
+
+![Workflow](screenshots/workflow.png)
+
+---
+
+### Pinecone Knowledge Retrieval
+
+![Knowledge Retrieval](screenshots/pinecone.png)
+
+---
+
+### AI Resolution Recommendation
+
+![Resolution](screenshots/resolution.png)
+
+---
+
+### Notification Generation
+
+![Notification](screenshots/notification.png)
+
+---
+
+### Workflow Execution Success
+
+![Execution](screenshots/execution.png)
+
+---
+
+# 🧪 Testing & Validation
+
+The system has been tested using multiple enterprise incident scenarios.
+
+| Scenario | Status |
+|----------|--------|
+| Payment API Failure | ✅ |
+| Authentication Failure | ✅ |
+| Database Timeout | ✅ |
+| Queue Failure | ✅ |
+| DNS Resolution Failure | ✅ |
+| VPN Connectivity Issue | ✅ |
+| Internal Server Error | ✅ |
+| Monitoring Alert | ✅ |
+| Webhook Failure | ✅ |
+
+---
+
+# 📊 AI Pipeline Validation
+
+The following AI components have been validated.
+
+| Component | Status |
+|-----------|--------|
+| Classification | ✅ |
+| Severity Assessment | ✅ |
+| Knowledge Retrieval | ✅ |
+| Knowledge Evaluation | ✅ |
+| Multi Intent Detection | ✅ |
+| Root Cause Analysis | ✅ |
+| Hallucination Detection | ✅ |
+| Resolution Recommendation | ✅ |
+| Notification Generation | ✅ |
+
+---
+
+# 📈 Current Project Status
+
+| Module | Completion |
+|---------|------------|
+| Multi-Agent Architecture | ✅ Complete |
+| Enterprise Workflow | ✅ Complete |
+| Google Gemini Integration | ✅ Complete |
+| Pinecone Integration | ✅ Complete |
+| Retrieval-Augmented Generation | ✅ Complete |
+| Root Cause Analysis | ✅ Complete |
+| Resolution Recommendation | ✅ Complete |
+| Hallucination Detection | ✅ Complete |
+| Notification Generator | ✅ Complete |
+| Webhook API | ✅ Complete |
+| Docker Deployment | ✅ Complete |
 
 ---
 
 # 🎯 Skills Demonstrated
 
+This project demonstrates practical experience in:
+
+## Artificial Intelligence
+
+- Multi-Agent AI Systems
 - Retrieval-Augmented Generation (RAG)
-- Semantic Search
-- Vector Databases
-- AI Workflow Automation
 - Prompt Engineering
-- Enterprise Documentation
-- Google Gemini API
-- Pinecone Integration
-- AI Agents
-- n8n Automation
+- Large Language Models (LLMs)
+- AI Workflow Orchestration
+- Hallucination Detection
 
 ---
 
-# 🚀 Future Improvements
+## Enterprise Automation
 
-- Multi-Agent Architecture
-- Automatic Incident Classification
-- Incident Priority Detection
-- Jira Integration
+- Workflow Automation
+- Business Process Automation
+- Incident Response Automation
+- AI Decision Support
+
+---
+
+## Vector Databases
+
+- Pinecone
+- Semantic Search
+- Embeddings
+- Similarity Search
+
+---
+
+## Cloud & DevOps
+
+- Docker
+- REST APIs
+- Webhooks
+- JSON
+- Enterprise Integrations
+
+---
+
+## Software Engineering
+
+- System Architecture
+- Enterprise Application Design
+- API Integration
+- Modular Workflow Design
+- Documentation
+
+---
+
+# 💼 Business Value
+
+The system provides measurable business value by:
+
+- Reducing Mean Time To Resolution (MTTR)
+- Improving incident response consistency
+- Automating repetitive troubleshooting tasks
+- Reusing organizational knowledge
+- Supporting engineering teams with AI-assisted decision making
+- Standardizing incident notifications
+
+---
+
+# 🚀 Future Roadmap
+
+Planned future enhancements include:
+
 - ServiceNow Integration
+- Jira Integration
 - Slack Notifications
-- Email Alerts
-- Root Cause Analysis
-- Incident Dashboard
+- Microsoft Teams Integration
+- Email Notification Support
+- Human-in-the-loop Approval
+- Feedback-based Learning
+- Dashboard & Analytics
+- Incident History Database
+- Performance Monitoring
+- Kubernetes Deployment
+- Cloud Deployment (AWS/Azure/GCP)
+
+---
+
+# 🏆 Project Highlights
+
+✔ Enterprise Multi-Agent AI Architecture
+
+✔ Retrieval-Augmented Generation (RAG)
+
+✔ Google Gemini Integration
+
+✔ Pinecone Vector Database
+
+✔ Knowledge Quality Evaluation
+
+✔ AI Hallucination Detection
+
+✔ Root Cause Analysis
+
+✔ Intelligent Resolution Recommendation
+
+✔ Enterprise Notification Generation
+
+✔ Automated Incident Workflow
+
+---
+
+# 📚 References
+
+- Google Gemini API
+- Pinecone Vector Database
+- n8n Documentation
+- Retrieval-Augmented Generation (RAG)
+- LangChain Concepts
+- Enterprise Incident Management Best Practices
+
+---
+
+# 🤝 Contributing
+
+Contributions, ideas, and suggestions are welcome.
+
+If you'd like to improve this project:
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Submit a Pull Request.
 
 ---
 
 # 👩‍💻 Author
 
-**Yashadhi Jayasundara**
+## **Yashadhi Jayasundara**
 
-## 📄 License
+Information Technology Undergraduate
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+### Areas of Interest
 
+- Artificial Intelligence
+- Multi-Agent Systems
+- Enterprise Automation
+- Workflow Engineering
+- Retrieval-Augmented Generation (RAG)
+- Prompt Engineering
+
+---
+
+## Connect With Me
+
+- GitHub: https://github.com/YOUR_USERNAME
+- LinkedIn: https://linkedin.com/in/YOUR_PROFILE
+
+---
+
+# ⭐ If you found this project useful...
+
+Please consider giving this repository a ⭐ on GitHub.
+
+It helps support the project and encourages future improvements.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+See the **LICENSE** file for more information.
+
+---
+
+<div align="center">
+
+## 🚀 Enterprise AI Incident Resolution System
+
+### Built with ❤️ using
+
+**Google Gemini • Pinecone • n8n • Docker • Multi-Agent AI • Retrieval-Augmented Generation**
+
+---
+
+**Thank you for visiting this repository!**
+
+</div>
