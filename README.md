@@ -678,39 +678,58 @@ The system provides several operational advantages.
 
 ### Enterprise AI Orchestrator
 
-![Enterprise Orchestrator](screenshots/orchestrator.png)
 
+
+The Enterprise AI Orchestrator successfully executing the complete multi-agent incident resolution workflow. The workflow classifies incidents, assesses severity, retrieves enterprise knowledge, performs root cause analysis, detects hallucinations, recommends resolutions, and generates structured notifications.
+
+![Enterprise AI Orchestrator](screenshots/full_workflow.png)
 ---
 
-### Multi-Agent Workflow
 
-![Workflow](screenshots/workflow.png)
 
----
+
 
 ### Pinecone Knowledge Retrieval
 
-![Knowledge Retrieval](screenshots/pinecone.png)
+## 📸 Pinecone Vector Database
+
+The enterprise knowledge base is indexed in Pinecone for semantic retrieval.
+
+![Pinecone Vector Database](screenshots/Pinecone Dashboard.png)
 
 ---
 
 ### AI Resolution Recommendation
 
-![Resolution](screenshots/resolution.png)
+![Resolution](screenshots/Resolution.png)
 
 ---
 
 ### Notification Generation
 
-![Notification](screenshots/notification.png)
+## 📸 AI Notification Output
+
+After completing incident classification, severity assessment, knowledge retrieval, root cause analysis, and resolution recommendation, the AI automatically generates a structured notification for the responsible operations team.
+
+This output includes:
+
+- Incident summary
+- Severity level
+- Root cause
+- Recommended resolution
+- Target team
+- Communication channel
+- Priority
+
+![AI Notification Output](screenshots/06_notification_output.png)
 
 ---
 
-### Workflow Execution Success
+## 📸 Enterprise Knowledge Base
 
-![Execution](screenshots/execution.png)
+The AI assistant retrieves information from an internal enterprise knowledge base containing runbooks, troubleshooting guides, monitoring procedures, and incident response documentation.
 
----
+![Enterprise Knowledge Base](screenshots/google_drive.png)
 
 # 🧪 Testing & Validation
 
