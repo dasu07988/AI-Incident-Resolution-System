@@ -1,0 +1,164 @@
+{
+  "name": "Agent 6 - Notification Generator subworkflow",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"incident_id\": \"{{$json.incident.incident_id}}\",\n  \"title\": \"{{$json.incident.title}}\",\n  \"description\": \"{{$json.incident.description}}\",\n  \"service\": \"{{$json.incident.service}}\",\n\n  \"severity\": \"{{$json.severity.severity}}\",\n  \"business_impact\": \"{{$json.severity.business_impact}}\",\n  \"affected_users\": \"{{$json.severity.affected_users}}\",\n  \"sla_response\": \"{{$json.severity.sla_response}}\",\n\n  \"recommended_resolution\": \"{{$json.resolution.recommended_resolution}}\",\n  \"resolution_category\": \"{{$json.resolution.resolution_category}}\",\n\n  \"validation_status\": \"{{$json.hallucination.validation_status}}\",\n  \"recommendation\": \"{{$json.hallucination.recommendation}}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -112,
+        -240
+      ],
+      "id": "5946e54f-894e-4661-9f23-6b2ccda1544d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        -16
+      ],
+      "id": "ab489610-91c9-4db4-9fe6-5c8836488e14",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Incident ID:\n{{incident.incident_id}}\n\nTitle:\n{{incident.title}}\n\nDescription:\n{{incident.description}}\n\nService:\n{{incident.service}}\n\nSeverity:\n{{severity.severity}}\n\nBusiness Impact:\n{{severity.business_impact}}\n\nAffected Users:\n{{severity.affected_users}}\n\nSLA:\n{{severity.sla_response}}\n\nRoot Cause:\n{{root_cause.root_cause}}\n\nAffected Component:\n{{root_cause.affected_component}}\n\nRecommended Resolution:\n{{resolution.recommended_resolution}}\n\nValidation Status:\n{{hallucination.validation_status}}\n\nRecommendation:\n{{hallucination.recommendation}}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "# Enterprise Notification Generator Agent\n\n## Role\n\nYou are an Enterprise AI Notification Generator Agent.\n\nYour responsibility is to generate a clear, professional notification for IT Operations teams based on the analyzed incident.\n\nYou are part of an Enterprise Multi-Agent AI Incident Resolution System.\n\n---\n\n## Objective\n\nGenerate a concise incident notification including:\n\n- Notification Title\n- Notification Message\n- Target Team\n- Communication Channel\n- Priority\n\n---\n\n## Target Teams\n\nChoose ONLY one.\n\n- Infrastructure Team\n- Application Team\n- Database Team\n- Network Team\n- Cloud Operations\n- Security Operations\n- DevOps Team\n- Incident Management\n\n---\n\n## Communication Channels\n\nChoose ONLY one.\n\n- Slack\n- Microsoft Teams\n- Email\n- SMS\n- PagerDuty\n\n---\n\n## Rules\n\nNotification should include:\n\n- Incident ID\n- Service\n- Severity\n- Root Cause\n- Recommended Resolution\n\nKeep the message professional.\n\nMaximum 120 words.\n\n---\n\n## Output Rules\n\nReturn ONLY valid JSON.\n\nNo markdown.\n\nNo explanations.\n\nNo code blocks.\n\n---\n\n## Required JSON\n\n{\n  \"notification_title\": \"\",\n  \"notification_message\": \"\",\n  \"target_team\": \"\",\n  \"communication_channel\": \"\",\n  \"priority\": \"\"\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        144,
+        -96
+      ],
+      "id": "e7fcd108-f55a-4d5c-b2b2-4674594bc9f0",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"notification_title\": {\n      \"type\": \"string\"\n    },\n    \"notification_message\": {\n      \"type\": \"string\"\n    },\n    \"target_team\": {\n      \"type\": \"string\"\n    },\n    \"communication_channel\": {\n      \"type\": \"string\"\n    },\n    \"priority\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"notification_title\",\n    \"notification_message\",\n    \"target_team\",\n    \"communication_channel\",\n    \"priority\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        368,
+        160
+      ],
+      "id": "ccfee40d-3843-498b-825d-c6c2c92fb4a7",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-flash-lite-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        112
+      ],
+      "id": "0c1f2e1b-1865-45a7-a83c-3710eb72b3a2",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "xo5QTVbkBE5petum",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: $input.first().json\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -176,
+        48
+      ],
+      "id": "ba075a88-e2f9-446d-95ff-e769f1cb8bc1",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Edit Fields": {
+      "main": [
+        []
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "624990cf-0b56-46e5-aacd-0f0c2cc00420",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8d445741768728f6ef02e0425470dc298a89577d75c26d14dd2b68dfd38dddc0"
+  },
+  "nodeGroups": [],
+  "id": "oEUvqXNDaFKo2Xs5",
+  "tags": []
+}

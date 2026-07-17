@@ -1,0 +1,137 @@
+{
+  "name": "Severity Assessment Agent -subflow",
+  "nodes": [
+    {
+      "parameters": {
+        "modelName": "models/gemini-flash-lite-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        224
+      ],
+      "id": "96bcf5bc-f47c-4281-9e52-a42d6223cb16",
+      "name": "Gemini 2.5 Flash",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "xo5QTVbkBE5petum",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Incident ID:\n{{ $json.incident.incident_id }}\n\nTitle:\n{{ $json.incident.title }}\n\nDescription:\n{{ $json.incident.description }}\n\nService:\n{{ $json.incident.service }}\n\nSeverity:\n{{ $json.severity.severity }}\n\nBusiness Impact:\n{{ $json.severity.business_impact }}\n\nAffected Users:\n{{ $json.severity.affected_users }}\n\nSLA:\n{{ $json.severity.sla_response }}\n\nRoot Cause:\n{{ $json.root_cause.root_cause }}\n\nAffected Component:\n{{ $json.root_cause.affected_component }}\n\nResolution:\n{{ $json.resolution.recommended_resolution }}\n\nResolution Category:\n{{ $json.resolution.resolution_category }}\n\nValidation:\n{{ $json.hallucination.validation_status }}\n\nRecommendation:\n{{ $json.hallucination.recommendation }}",
+        "options": {
+          "systemMessage": "=# Enterprise Severity Assessment Agent\n\n## Role\n\nYou are an Enterprise AI Severity Assessment Agent.\n\nYour responsibility is to assess the severity of production IT incidents based on business impact, service availability, affected users, and operational risk.\n\nYou are part of an Enterprise Multi-Agent AI Incident Resolution System.\n\n---\n\n## Objective\n\nAnalyze the provided incident information and determine:\n\n- Severity Level\n- Business Impact\n- Estimated Affected Users\n- SLA Response Time\n- Confidence Score\n\n---\n\n## Severity Levels\n\nAlways choose ONLY one:\n\n- Critical\n- High\n- Medium\n- Low\n\nNever invent new severity levels.\n\n---\n\n## Severity Rules\n\n### Critical\n\nUse Critical when:\n\n- Production service completely unavailable\n- Revenue generating services unavailable\n- Payment failures\n- Database unavailable\n- Multiple business services affected\n- Security breach in production\n- Large customer impact\n\n---\n\n### High\n\nUse High when:\n\n- Major degradation\n- Core functionality unavailable\n- Hundreds or thousands of users affected\n- No immediate workaround\n\n---\n\n### Medium\n\nUse Medium when:\n\n- Partial degradation\n- Some functionality unavailable\n- Workaround exists\n- Limited customer impact\n\n---\n\n### Low\n\nUse Low when:\n\n- Cosmetic issue\n- Minor bug\n- Internal tool issue\n- Small number of users affected\n- No business impact\n\n---\n\n## Business Impact\n\nAlways return one:\n\n- Critical Business Impact\n- High Business Impact\n- Moderate Business Impact\n- Low Business Impact\n\n---\n\n## Estimated Users\n\nChoose one:\n\n- Enterprise Wide\n- Thousands\n- Hundreds\n- Tens\n- Few\n- Unknown\n\n---\n\n## SLA Response Time\n\nReturn ONLY one:\n\n- Immediate\n- 15 Minutes\n- 30 Minutes\n- 1 Hour\n- 4 Hours\n- Next Business Day\n\n---\n\n## Confidence\n\nReturn a decimal value between:\n\n0.00\n\nand\n\n1.00\n\nExample:\n\n0.96\n\n---\n\n## Output Rules\n\nReturn ONLY valid JSON.\n\nNo markdown.\n\nNo explanations.\n\nNo code blocks.\n\nNo comments.\n\nNo additional text.\n\n---\n\n## Required JSON Schema\n\n{\n  \"severity\": \"\",\n  \"business_impact\": \"\",\n  \"affected_users\": \"\",\n  \"sla_response\": \"\",\n  \"confidence\": 0.00\n}\n\n---\n\n## Input\n\nIncident:\n\n{{$json.incident}}\n\nClassification:\n\n{{$json.incident_type}}\n\nCategory:\n\n{{$json.category}}\n\nPriority:\n\n{{$json.priority}}\n\n---\n\n## Final Instruction\n\nAnalyze the incident according to enterprise ITSM severity rules.\n\nAlways return exactly one valid JSON object.\n\nNever output anything except the required JSON."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        -16
+      ],
+      "id": "5ef8e556-46fe-4fc8-8d16-5ac723d6ea1b",
+      "name": "Severity Assessment Agent"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"severity\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"Critical\",\n        \"High\",\n        \"Medium\",\n        \"Low\"\n      ]\n    },\n    \"priority\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"P1\",\n        \"P2\",\n        \"P3\",\n        \"P4\"\n      ]\n    },\n    \"business_impact\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"High\",\n        \"Medium\",\n        \"Low\"\n      ]\n    },\n    \"sla_response_minutes\": {\n      \"type\": \"integer\"\n    },\n    \"requires_human_approval\": {\n      \"type\": \"boolean\"\n    },\n    \"confidence\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\n    \"severity\",\n    \"priority\",\n    \"business_impact\",\n    \"sla_response_minutes\",\n    \"requires_human_approval\",\n    \"confidence\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        384,
+        208
+      ],
+      "id": "44e8f5ba-db46-4ff2-9a32-d11fdf38124d",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.output;\n\nreturn [\n  {\n    json: JSON.parse(raw)\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        -16
+      ],
+      "id": "a3541fda-dc74-46e9-b9b8-8964640ac7d3",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -272,
+        -64
+      ],
+      "id": "a6d2bdae-2f20-4433-ab3c-0128d1553160",
+      "name": "When Executed by Another Workflow"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Gemini 2.5 Flash": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Severity Assessment Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        []
+      ]
+    },
+    "Severity Assessment Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Severity Assessment Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "c2121ae0-5d49-4b23-bcb9-461a9704e5e8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8d445741768728f6ef02e0425470dc298a89577d75c26d14dd2b68dfd38dddc0"
+  },
+  "nodeGroups": [],
+  "id": "Bxf4WLq1k6dgiNov",
+  "tags": []
+}

@@ -1,0 +1,160 @@
+{
+  "name": "Agent 1 - Incident Classification (Subworkflow)",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"incident\": {{$json.incident}},\n  \"severity\": \"{{$json.severity}}\",\n  \"priority\": \"{{$json.priority}}\",\n  \"knowledge\": \"{{$json.knowledge}}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -64,
+        -64
+      ],
+      "id": "ce09fad6-21c7-4213-9a96-7b8ed0fd5d86",
+      "name": "Sample Incident"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Incident ID:\n{{ $json.incident_id }}\n\nTitle:\n{{ $json.title }}\n\nDescription:\n{{ $json.description }}\n\nAffected Service:\n{{ $json.service }}",
+        "options": {
+          "systemMessage": "# Enterprise Incident Classification Agent\n\n## Role\n\nYou are an Enterprise AI Incident Classification Agent responsible for categorizing production IT incidents.\n\nYour responsibility is to analyze an incoming enterprise incident and classify it according to predefined enterprise incident taxonomy.\n\nYou are part of a multi-agent AI Operations Copilot.\n\n---\n\n## Objective\n\nAnalyze the provided incident information and determine:\n\n- Incident Type\n- Business Category\n- Priority\n- Confidence Score\n\n---\n\n## Supported Incident Types\n\nAlways choose ONLY one of the following values.\n\n- Application\n- Database\n- Network\n- Security\n- Infrastructure\n- Cloud\n- Authentication\n- Storage\n\nNever invent new incident types.\n\n---\n\n## Category Rules\n\nThe category represents the affected business service or business domain.\n\nExamples include:\n\n- Payment Gateway\n- Customer Portal\n- Authentication Service\n- Billing System\n- Inventory System\n- Email Service\n- VPN\n- Database Cluster\n- API Gateway\n- File Storage\n\nChoose the category that best represents the affected service.\n\n---\n\n## Priority Rules\n\nDetermine business priority according to enterprise impact.\n\nCritical\n\n- Entire production unavailable\n- Revenue loss\n- Large customer impact\n- Complete service outage\n\nHigh\n\n- Major production issue\n- Core business functionality affected\n- Many users impacted\n- Immediate investigation required\n\nMedium\n\n- Partial degradation\n- Limited user impact\n- Workaround available\n\nLow\n\n- Minor issue\n- Cosmetic bug\n- Minimal business impact\n\nAlways return one of:\n\n- Critical\n- High\n- Medium\n- Low\n\n---\n\n## Confidence Score\n\nReturn a decimal value between:\n\n0.00\n\nand\n\n1.00\n\nExample\n\n0.97\n\n---\n\n## Output Rules\n\nReturn ONLY valid JSON.\n\nDo NOT explain your reasoning.\n\nDo NOT generate markdown.\n\nDo NOT generate code blocks.\n\nDo NOT generate additional text.\n\nDo NOT include comments.\n\nDo NOT include extra fields.\n\n---\n\n## Required JSON Schema\n\n{\n    \"incident_type\": \"\",\n    \"category\": \"\",\n    \"priority\": \"\",\n    \"confidence\": 0.00\n}\n\n---\n\n## Example 1\n\nInput\n\nTitle\n\nPayment API returns HTTP 500\n\nDescription\n\nCustomers cannot complete payments.\n\nService\n\nPayment Gateway\n\nOutput\n\n{\n    \"incident_type\": \"Application\",\n    \"category\": \"Payment Gateway\",\n    \"priority\": \"High\",\n    \"confidence\": 0.98\n}\n\n---\n\n## Example 2\n\nInput\n\nTitle\n\nPrimary database unavailable\n\nDescription\n\nProduction database cluster is offline.\n\nService\n\nCustomer Database\n\nOutput\n\n{\n    \"incident_type\": \"Database\",\n    \"category\": \"Customer Database\",\n    \"priority\": \"Critical\",\n    \"confidence\": 0.99\n}\n\n---\n\n## Example 3\n\nInput\n\nTitle\n\nVPN users disconnected\n\nDescription\n\nRemote employees cannot connect.\n\nService\n\nCorporate VPN\n\nOutput\n\n{\n    \"incident_type\": \"Network\",\n    \"category\": \"Corporate VPN\",\n    \"priority\": \"Medium\",\n    \"confidence\": 0.95\n}\n\n---\n\n## Final Instruction\n\nAlways classify enterprise incidents using the predefined taxonomy.\n\nAlways return exactly one valid JSON object.\n\nNever return explanations.\n\nNever invent new incident types.\n\nNever output anything except the required JSON object."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        -16
+      ],
+      "id": "ab6a13b6-018d-49ab-8e0a-49e5fe750db0",
+      "name": "Incident Classification Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-flash-lite-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        224
+      ],
+      "id": "2c364f8b-aa80-46e4-9c5f-8e030ade6643",
+      "name": "Gemini 2.5 Flash",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "xo5QTVbkBE5petum",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "incident",
+              "type": "object"
+            },
+            {
+              "name": "severity"
+            },
+            {
+              "name": "priority"
+            },
+            {
+              "name": "knowledge"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -320,
+        -48
+      ],
+      "id": "df7460b2-e712-4b94-a91d-408b66d252b1",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.output;\n\nreturn [\n  {\n    json: JSON.parse(raw)\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        -16
+      ],
+      "id": "b9a7f6c2-2492-497a-9f8f-00278c425fec",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Sample Incident": {
+      "main": [
+        [
+          {
+            "node": "Incident Classification Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini 2.5 Flash": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Incident Classification Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Sample Incident",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Incident Classification Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "0b0e47c3-7380-4b03-b64a-2e117e48c38d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8d445741768728f6ef02e0425470dc298a89577d75c26d14dd2b68dfd38dddc0"
+  },
+  "nodeGroups": [],
+  "id": "HK2k70lDyRT4CkTt",
+  "tags": []
+}

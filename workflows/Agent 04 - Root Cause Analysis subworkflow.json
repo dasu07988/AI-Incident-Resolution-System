@@ -1,0 +1,149 @@
+{
+  "name": "Agent 04 - Root Cause Analysis subworkflow",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"incident_id\":\"={{$json.incident_id}}\",\n  \"title\":\"={{$json.title}}\",\n  \"description\":\"={{$json.description}}\",\n  \"service\":\"={{$json.service}}\",\n  \"incident_type\":\"={{$json.incident_type}}\",\n  \"category\":\"={{$json.category}}\",\n  \"severity\":\"={{$json.severity}}\",\n  \"summary\":\"={{$json.summary}}\",\n  \"possible_causes\":\"={{$json.possible_causes}}\",\n  \"recommended_runbook\":\"={{$json.recommended_runbook}}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -64,
+        -96
+      ],
+      "id": "1af36e2f-1e91-4d5d-88bf-8c8f8372f619",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -304,
+        -96
+      ],
+      "id": "a5a5f271-3f0e-4a77-a768-d95688ba96cb",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Incident ID:\n{{$json.incident_id}}\n\nTitle:\n{{$json.title}}\n\nDescription:\n{{$json.description}}\n\nService:\n{{$json.service}}\n\nIncident Type:\n{{$json.incident_type}}\n\nCategory:\n{{$json.category}}\n\nSeverity:\n{{$json.severity}}\n\nKnowledge Summary:\n{{$json.summary}}\n\nPossible Causes:\n{{$json.possible_causes}}\n\nRunbook:\n{{$json.recommended_runbook}}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "# Enterprise Root Cause Analysis Agent\n\n## Role\n\nYou are an Enterprise AI Root Cause Analysis Agent.\n\nYour responsibility is to determine the most probable technical root cause of an IT production incident using the incident details and retrieved enterprise knowledge.\n\nYou are part of an Enterprise Multi-Agent AI Incident Resolution System.\n\n---\n\n## Objective\n\nAnalyze the provided incident information and determine:\n\n- Primary Root Cause\n- Root Cause Category\n- Technical Explanation\n- Confidence Score\n\n---\n\n## Root Cause Categories\n\nAlways choose ONLY one.\n\n- Application Bug\n- Database Failure\n- Network Issue\n- Infrastructure Failure\n- Cloud Configuration\n- Authentication Failure\n- Storage Failure\n- Third-party Service\n- Human Error\n- Unknown\n\nNever invent new categories.\n\n---\n\n## Analysis Rules\n\nUse the following information:\n\n- Incident title\n- Description\n- Severity\n- Incident Type\n- Category\n- Knowledge Base Summary\n- Possible Causes\n- Recommended Runbook\n- Root cause\n- Affected component\n- Confidence score\n\nReturn ONLY valid JSON matching the required schema.\n\nPrioritize enterprise knowledge over assumptions.\n\nIf knowledge is insufficient, select:\n\nRoot Cause Category:\nUnknown\n\nConfidence:\nbelow 0.50\n\nNever hallucinate.\n\n---\n\n## Confidence\n\nReturn a decimal value between\n\n0.00\n\nand\n\n1.00\n\n---\n\n## Output Rules\n\nReturn ONLY valid JSON.\n\nNo markdown.\n\nNo explanations.\n\nNo code blocks.\n\n---\n\n## Required JSON\n\n{\n  \"primary_root_cause\": \"\",\n  \"root_cause_category\": \"\",\n  \"technical_explanation\": \"\",\n  \"confidence\": 0.00\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        144,
+        -96
+      ],
+      "id": "2afb54ae-6398-4e12-94b6-a44bb6f07348",
+      "name": "AI Agent",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 3000
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"root_cause\": {\n      \"type\": \"string\"\n    },\n    \"affected_component\": {\n      \"type\": \"string\"\n    },\n    \"confidence\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\n    \"root_cause\",\n    \"affected_component\",\n    \"confidence\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        368,
+        160
+      ],
+      "id": "a088756f-c9f0-4c31-9b80-ae32c6a57be7",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-flash-lite-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        112
+      ],
+      "id": "9a8e0045-d092-4322-ad2b-e34a66180e95",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "xo5QTVbkBE5petum",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "0eef779f-5d76-4969-a830-721dcd968376",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8d445741768728f6ef02e0425470dc298a89577d75c26d14dd2b68dfd38dddc0"
+  },
+  "nodeGroups": [],
+  "id": "KnykzSqPotjkNzao",
+  "tags": []
+}

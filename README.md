@@ -695,7 +695,7 @@ The Enterprise AI Orchestrator successfully executing the complete multi-agent i
 
 The enterprise knowledge base is indexed in Pinecone for semantic retrieval.
 
-![Pinecone Vector Database](screenshots/Pinecone Dashboard.png)
+![Pinecone Vector Database](<screenshots/Pinecone Dashboard.png>)
 
 ---
 
@@ -729,7 +729,7 @@ This output includes:
 
 The AI assistant retrieves information from an internal enterprise knowledge base containing runbooks, troubleshooting guides, monitoring procedures, and incident response documentation.
 
-![Enterprise Knowledge Base](screenshots/google_drive.png)
+![Enterprise Knowledge Base](<screenshots/google drive.png>)
 
 # 🧪 Testing & Validation
 
@@ -892,6 +892,15 @@ Planned future enhancements include:
 
 ✔ Automated Incident Workflow
 
+---
+## Results
+
+- 13 Enterprise Runbooks
+- 49 Vector Chunks indexed
+- 9 AI Agents
+- Google Gemini 2.5 Flash
+- Pinecone Vector Database
+- End-to-End Enterprise Workflow
 ---
 
 # 📚 References

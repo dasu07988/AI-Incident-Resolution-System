@@ -1,0 +1,146 @@
+{
+  "name": "Agent 5 - Resolution Recommendation subworkflow",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"incident_id\":\"={{$json.incident_id}}\",\n  \"title\":\"={{$json.title}}\",\n  \"description\":\"={{$json.description}}\",\n  \"service\":\"={{$json.service}}\",\n  \"incident_type\":\"={{$json.incident_type}}\",\n  \"category\":\"={{$json.category}}\",\n  \"severity\":\"={{$json.severity}}\",\n  \"summary\":\"={{$json.summary}}\",\n  \"possible_causes\":\"={{$json.possible_causes}}\",\n  \"recommended_runbook\":\"={{$json.recommended_runbook}}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -64,
+        -96
+      ],
+      "id": "1ef5c5dd-4152-4675-91ce-d60dd76c154e",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -304,
+        -96
+      ],
+      "id": "6c11d6f9-b111-42c4-a98e-7a3247eb0f78",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Incident ID:\n{{$json.incident_id}}\n\nTitle:\n{{$json.title}}\n\nDescription:\n{{$json.description}}\n\nService:\n{{$json.service}}\n\nIncident Type:\n{{$json.incident_type}}\n\nCategory:\n{{$json.category}}\n\nSeverity:\n{{$json.severity}}\n\nKnowledge Summary:\n{{$json.summary}}\n\nPossible Causes:\n{{$json.possible_causes}}\n\nRecommended Runbook:\n{{$json.recommended_runbook}}\n\nPrimary Root Cause:\n{{$json.primary_root_cause}}\n\nRoot Cause Category:\n{{$json.root_cause_category}}\n\nRecommend the most appropriate enterprise resolution.\n\nReturn ONLY valid JSON.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "# Enterprise Resolution Recommendation Agent\n\n## Role\n\nYou are an Enterprise AI Resolution Recommendation Agent.\n\nYour responsibility is to recommend the most appropriate resolution for a production IT incident based on the incident details, severity, identified root cause, and enterprise knowledge.\n\nYou are part of an Enterprise Multi-Agent AI Incident Resolution System.\n\n---\n\n## Objective\n\nAnalyze the provided incident information and determine:\n\n- Recommended Resolution\n- Resolution Category\n- Estimated Resolution Time\n- Automation Possible\n- Confidence Score\n\n---\n\n## Resolution Categories\n\nAlways choose ONLY one.\n\n- Restart Service\n- Rollback Deployment\n- Database Recovery\n- Infrastructure Scaling\n- Configuration Fix\n- Security Mitigation\n- Network Recovery\n- Storage Recovery\n- Manual Investigation\n- Escalate to Engineering\n\nNever invent new categories.\n\n---\n\n## Analysis Rules\n\nUse:\n\n- Incident Details\n- Severity\n- Root Cause\n- Knowledge Summary\n- Possible Causes\n- Recommended Runbook\n\nAlways recommend the safest enterprise resolution.\n\nIf confidence is low or knowledge is insufficient:\n\nResolution Category:\nManual Investigation\n\nConfidence:\nbelow 0.50\n\nNever hallucinate.\n\n---\n\n## Estimated Resolution Time\n\nChoose ONLY one.\n\n- <15 Minutes\n- 15-30 Minutes\n- 30-60 Minutes\n- 1-4 Hours\n- >4 Hours\n\n---\n\n## Automation Possible\n\nReturn ONLY\n\ntrue\n\nor\n\nfalse\n\n---\n\n## Confidence\n\nReturn a decimal between\n\n0.00\n\nand\n\n1.00\n\n---\n\n## Output Rules\n\nReturn ONLY valid JSON.\n\nNo explanations.\n\nNo markdown.\n\nNo code blocks.\n\n---\n\n## Required JSON\n\n{\n  \"recommended_resolution\": \"\",\n  \"resolution_category\": \"\",\n  \"estimated_resolution_time\": \"\",\n  \"automation_possible\": true,\n  \"confidence\": 0.00\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        144,
+        -96
+      ],
+      "id": "1d47abb4-4446-47c9-b99b-a9d28b7a004d",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"recommended_resolution\": {\n      \"type\": \"string\"\n    },\n    \"resolution_category\": {\n      \"type\": \"string\"\n    },\n    \"estimated_resolution_time\": {\n      \"type\": \"string\"\n    },\n    \"automation_possible\": {\n      \"type\": \"boolean\"\n    },\n    \"confidence\": {\n      \"type\": \"number\"\n    }\n  },\n  \"required\": [\n    \"recommended_resolution\",\n    \"resolution_category\",\n    \"estimated_resolution_time\",\n    \"automation_possible\",\n    \"confidence\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        368,
+        160
+      ],
+      "id": "1b28ec13-2f2c-409f-93a3-94a21f3fa27f",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-flash-lite-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        112
+      ],
+      "id": "bcf953d9-f3ca-499c-8a7b-5323878ec279",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "xo5QTVbkBE5petum",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "cfd50afd-9dd0-4f1f-aaea-f21b064cb066",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8d445741768728f6ef02e0425470dc298a89577d75c26d14dd2b68dfd38dddc0"
+  },
+  "nodeGroups": [],
+  "id": "V6bvO6Mh1o95GVbM",
+  "tags": []
+}

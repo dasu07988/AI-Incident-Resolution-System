@@ -1,0 +1,762 @@
+{
+  "name": "Enterprise AI Orchestrator",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "4821f918-0a77-49d3-9fd7-4b680acba23e",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1040,
+        -384
+      ],
+      "id": "eaf00b53-c60a-44fc-a5cc-f8e0cda1abad",
+      "name": "Webhook",
+      "webhookId": "4821f918-0a77-49d3-9fd7-4b680acba23e"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "HK2k70lDyRT4CkTt",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/HK2k70lDyRT4CkTt",
+          "cachedResultName": "Agent 1 - Incident Classification (Subworkflow)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "incident": "={{$json.body}}",
+            "severity": "={{$json.body.severity ?? \"\"}}",
+            "priority": "={{$json.body.priority ?? \"\"}}",
+            "knowledge": "={{$json.body.knowledge ?? \"\"}}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "incident",
+              "displayName": "incident",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "object"
+            },
+            {
+              "id": "severity",
+              "displayName": "severity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "priority",
+              "displayName": "priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "knowledge",
+              "displayName": "knowledge",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -864,
+        -352
+      ],
+      "id": "c8bb6f22-baa7-4a6d-ab6c-87b751c9e7f9",
+      "name": "Agent 1 - Classification"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "Bxf4WLq1k6dgiNov",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/Bxf4WLq1k6dgiNov",
+          "cachedResultName": "Severity Assessment Agent -subflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "incident_id",
+              "displayName": "incident_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "service",
+              "displayName": "service",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "incident_type",
+              "displayName": "incident_type",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "priority",
+              "displayName": "priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -672,
+        -352
+      ],
+      "id": "52543374-ef31-4854-a883-7f8689548629",
+      "name": "Agent 2 - Severity"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "iim5SCO58weYhM0n",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/iim5SCO58weYhM0n",
+          "cachedResultName": "Knowledge Retrieval Agent -subflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "incident_id ",
+              "displayName": "incident_id ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "title ",
+              "displayName": "title ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "service Type ",
+              "displayName": "service Type ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "incident_type ",
+              "displayName": "incident_type ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "category ",
+              "displayName": "category ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "severity ",
+              "displayName": "severity ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "priority ",
+              "displayName": "priority ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -480,
+        -368
+      ],
+      "id": "3c40211b-ee05-48a9-89e7-aec9086725cd",
+      "name": "Agent 3 - Knowledge Retrieval"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "qiDnDqzaYfiUTDX9",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/qiDnDqzaYfiUTDX9",
+          "cachedResultName": "Agent 7 - RAG Evaluation subworkflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -928,
+        -144
+      ],
+      "id": "219796ea-d3e6-468c-b569-c3bc01f625c1",
+      "name": "Agent 7 - RAG Evaluation"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "961fbb5c-b7a2-4a6f-8c7a-1b65ea68017b",
+              "leftValue": "={{$json.knowledge_relevant}}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "61535764-d531-4a85-8778-4353b2664220",
+              "leftValue": "={{$json.knowledge_complete}}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -752,
+        0
+      ],
+      "id": "4d16acd2-6799-4af5-a95f-7001b1a7319a",
+      "name": "Knowledge Quality Check"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "qqG3v8qdOZl9x7Nu",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/qqG3v8qdOZl9x7Nu",
+          "cachedResultName": "Agent 8 - Multi-Intent Detection subworkflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -1072,
+        272
+      ],
+      "id": "ca626bd6-a545-4131-a998-ecd383c64523",
+      "name": "Agent 8 - Multi Intent"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KnykzSqPotjkNzao",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/KnykzSqPotjkNzao",
+          "cachedResultName": "Agent 04 - Root Cause Analysis subworkflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -944,
+        400
+      ],
+      "id": "7fbeac47-176e-4d2e-a49e-d98fc8fcfdd7",
+      "name": "Agent 4 - Root Cause"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "kfquzKjNWakrpUxC",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/kfquzKjNWakrpUxC",
+          "cachedResultName": "Agent 9 - Hallucination Detection subworkflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -736,
+        400
+      ],
+      "id": "532a1586-2454-4e57-a0a3-7b70af26de0b",
+      "name": "Agent 9 - Hallucination Detection"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "9468aa0e-8ab1-4f67-9cf0-b0008501692d",
+              "leftValue": "={{$json.hallucination_detected}}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -528,
+        400
+      ],
+      "id": "112de574-8358-455f-b0d3-185691d5bdfe",
+      "name": "Hallucination Check"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "V6bvO6Mh1o95GVbM",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/V6bvO6Mh1o95GVbM",
+          "cachedResultName": "Agent 5 - Resolution Recommendation subworkflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -192,
+        400
+      ],
+      "id": "5863a476-846a-4ece-b0d3-0423ad6bd189",
+      "name": "Agent 5 - Resolution Recommendation"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "oEUvqXNDaFKo2Xs5",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/oEUvqXNDaFKo2Xs5",
+          "cachedResultName": "Agent 6 - Notification Generator subworkflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "incident": "={{ $('Webhook').item.json.body }}",
+            "severity": "={{ $('Agent 2 - Severity').item.json }}",
+            "root_cause": "={{ $('Agent 4 - Root Cause').item.json.output }}",
+            "resolution": "={{ $('Agent 5 - Resolution Recommendation').item.json.output }}",
+            "hallucination": "={{ $('Agent 9 - Hallucination Detection').item.json.output }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "incident",
+              "displayName": "incident",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "object",
+              "removed": false
+            },
+            {
+              "id": "severity",
+              "displayName": "severity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "object",
+              "removed": false
+            },
+            {
+              "id": "root_cause",
+              "displayName": "root_cause",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "object",
+              "removed": false
+            },
+            {
+              "id": "resolution",
+              "displayName": "resolution",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "object",
+              "removed": false
+            },
+            {
+              "id": "hallucination",
+              "displayName": "hallucination",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "object",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        320
+      ],
+      "id": "ec19fb07-b894-4040-ae74-7072433a402a",
+      "name": "Agent 6 - Notification"
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "7c08fc0f-4a6a-4842-b233-25b3939ce93a",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Agent 1 - Classification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 1 - Classification": {
+      "main": [
+        [
+          {
+            "node": "Agent 2 - Severity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 2 - Severity": {
+      "main": [
+        [
+          {
+            "node": "Agent 3 - Knowledge Retrieval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 3 - Knowledge Retrieval": {
+      "main": [
+        [
+          {
+            "node": "Agent 7 - RAG Evaluation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 7 - RAG Evaluation": {
+      "main": [
+        [
+          {
+            "node": "Knowledge Quality Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Quality Check": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Agent 8 - Multi Intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 8 - Multi Intent": {
+      "main": [
+        [
+          {
+            "node": "Agent 4 - Root Cause",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 4 - Root Cause": {
+      "main": [
+        [
+          {
+            "node": "Agent 9 - Hallucination Detection",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 9 - Hallucination Detection": {
+      "main": [
+        [
+          {
+            "node": "Hallucination Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hallucination Check": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Agent 5 - Resolution Recommendation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 5 - Resolution Recommendation": {
+      "main": [
+        [
+          {
+            "node": "Agent 6 - Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agent 6 - Notification": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "11b2d13d-d302-45a1-9c59-7c1e7a4a238d",
+  "meta": {
+    "instanceId": "8d445741768728f6ef02e0425470dc298a89577d75c26d14dd2b68dfd38dddc0"
+  },
+  "nodeGroups": [],
+  "id": "rVCmVvvQRYssLSgb",
+  "tags": []
+}
