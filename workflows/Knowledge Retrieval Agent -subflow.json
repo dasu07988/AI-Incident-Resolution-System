@@ -1,0 +1,323 @@
+{
+  "name": "Knowledge Retrieval Agent -subflow",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "221459cc-f9c5-4c67-b6b3-99aa1ac0a1f5",
+              "name": "incident_type",
+              "value": "Application",
+              "type": "string"
+            },
+            {
+              "id": "d74f0b5f-e933-4b3b-8119-b5e484167ff8",
+              "name": "category",
+              "value": "Payment Gateway",
+              "type": "string"
+            },
+            {
+              "id": "1e36a5a4-7d00-4055-b00f-6c170e272563",
+              "name": "severity",
+              "value": "Critical",
+              "type": "string"
+            },
+            {
+              "id": "b41b21b8-2236-41a4-a2d3-cd3f0895b65f",
+              "name": "priority",
+              "value": "P1",
+              "type": "string"
+            },
+            {
+              "id": "93794e3f-3102-48bc-a245-133710651b0e",
+              "name": "description",
+              "value": "Payment API returns HTTP 500 errors. Customers cannot complete online payments.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -736,
+        -288
+      ],
+      "id": "787d20b8-abc8-473b-a283-26d92df5f76b",
+      "name": "Sample Incident"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Incident ID:\n{{$json.incident_id}}\n\nTitle:\n{{$json.title}}\n\nDescription:\n{{$json.description}}\n\nAffected Service:\n{{$json.service}}\n\nIncident Type:\n{{$json.incident_type}}\n\nCategory:\n{{$json.category}}\n\nPriority:\n{{$json.priority}}\n\nSeverity:\n{{$json.severity}}\n\nRetrieved Knowledge:\n\n{{$json.context}}\n\nBased on the retrieved enterprise knowledge,\nidentify the most relevant information for this incident.\n\nReturn ONLY valid JSON.",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "ou are an Enterprise AI Knowledge Retrieval Agent.\n\nYour responsibility is to retrieve the most relevant enterprise knowledge required to resolve an IT incident.You must ONLY use the retrieved enterprise knowledge.\n\nNever invent information.\n\nIf the retrieved documents do not contain the answer, return:\n\n{\n  \"summary\":\"No relevant knowledge found.\",\n  \"possible_causes\":[],\n  \"recommended_runbook\":\"Unknown\",\n  \"confidence\":0\n}\n\nReturn JSON only.\n\nYou are part of a multi-agent Enterprise AI Operations Copilot.\n\n---\n\n## Objective\n\nGiven a classified enterprise incident, retrieve the most relevant operational knowledge from the enterprise vector database.\n\nKnowledge may include:\n\n- Standard Operating Procedures (SOPs)\n- Incident Runbooks\n- Troubleshooting Guides\n- Previous Incident Summaries\n- Knowledge Base Articles\n\n---\n\n## Retrieval Rules\n\nAlways retrieve the most relevant documents.\n\nPrefer documents with the highest semantic similarity.\n\nReturn only operationally useful knowledge.\n\nIgnore unrelated documents.\n\nMaximum retrieved documents: 5\n\n---\n\n## Output Rules\n\nReturn valid JSON only.\n\nDo not explain.\n\nDo not generate solutions.\n\nDo not perform root cause analysis.\n\nOnly retrieve knowledge.\nReturn ONLY data that matches the required structured output.\n\nEach retrieved document MUST contain:\n\n- document_id\n- title\n- source\n- similarity_score\n- summary\n\nDo not return any additional fields.\n\nIf no documents are found, return an empty array.\n\nExample:\n\n{\n  \"retrieved_documents\": [\n    {\n      \"document_id\": \"RB-001\",\n      \"title\": \"Payment API Recovery Runbook\",\n      \"source\": \"Enterprise Knowledge Base\",\n      \"similarity_score\": 0.97,\n      \"summary\": \"Steps to recover Payment API failures.\"\n    }\n  ],\n  \"confidence\": 0.96\n}\nThe input already contains the retrieved knowledge from Pinecone.\n\nDo not invent new documents.\n\nUse only the retrieved documents to produce the response."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -96,
+        -144
+      ],
+      "id": "3f252ba1-4e5e-41c1-8d49-a55e1cf6628c",
+      "name": "Knowledge Retrieval Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-flash-lite-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -336,
+        112
+      ],
+      "id": "9fafbe16-a352-47dc-96cf-7684936a4d76",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "xo5QTVbkBE5petum",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\":\"object\",\n  \"properties\":{\n    \"summary\":{\n      \"type\":\"string\"\n    },\n    \"possible_causes\":{\n      \"type\":\"array\",\n      \"items\":{\n        \"type\":\"string\"\n      }\n    },\n    \"recommended_runbook\":{\n      \"type\":\"string\"\n    },\n    \"confidence\":{\n      \"type\":\"number\"\n    }\n  },\n  \"required\":[\n    \"summary\",\n    \"possible_causes\",\n    \"recommended_runbook\",\n    \"confidence\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -48,
+        112
+      ],
+      "id": "85c80e8b-3ac9-44ff-a7d2-e8b7d311f3fa",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-embedding-2"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -592,
+        48
+      ],
+      "id": "516d16f7-25b5-4a70-8e9d-43c7be21147e",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "xo5QTVbkBE5petum",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "documents",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        -224
+      ],
+      "id": "32a5ef70-8287-4422-af8e-a76199711372",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "mode": "load",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "apexpay-incident-kb",
+          "mode": "list",
+          "cachedResultName": "apexpay-incident-kb"
+        },
+        "prompt": "=Incident: {{$json.title}}  Description: {{$json.description}}  Category: {{$json.category}}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.3,
+      "position": [
+        -560,
+        -240
+      ],
+      "id": "a5ed5db8-d499-432d-a281-a1fff6e79ab3",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "sYFe69YQIDHG9h88",
+          "name": "Pinecone account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "incident_id "
+            },
+            {
+              "name": "title "
+            },
+            {
+              "name": "description"
+            },
+            {
+              "name": "service Type "
+            },
+            {
+              "name": "incident_type "
+            },
+            {
+              "name": "category "
+            },
+            {
+              "name": "severity "
+            },
+            {
+              "name": "priority "
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1008,
+        -320
+      ],
+      "id": "5559ff17-24e7-4d28-9288-0c023e8ba3bd",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = $input.first().json.output;\n\nreturn [\n  {\n    json: output\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        288,
+        -96
+      ],
+      "id": "c2bda0e2-ba53-49f8-94d5-c3313f6a512c",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Sample Incident": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Knowledge Retrieval Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Knowledge Retrieval Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Knowledge Retrieval Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinecone Vector Store": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Sample Incident",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Retrieval Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "efaba4f9-33f1-4db6-869b-4e1261f9482e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8d445741768728f6ef02e0425470dc298a89577d75c26d14dd2b68dfd38dddc0"
+  },
+  "nodeGroups": [],
+  "id": "iim5SCO58weYhM0n",
+  "tags": []
+}
