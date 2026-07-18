@@ -266,31 +266,27 @@ POST /webhook/enterprise-ai-orchestrator
 
 ---
 
-# 📸 Screenshots
-
 ## React Dashboard
- 
-React Dashboard <img src="(screenshots/React-Dashboard.png)" width="900"/>
+
+<img src="screenshots/React-Dashboard.png" width="900"/>
 
 ---
 
 ## Incident Management
 
-Incident Management <img src="(screenshots/incidents.png)" width="900"/>
+<img src="screenshots/incidents.png" width="900"/>
 
 ---
 
 ## Analytics Dashboard
 
-Analytics Dashboard <img src="(screenshots/Analytics.png)" width="900"/>
+<img src="screenshots/Analytics.png" width="900"/>
 
 ---
 
 ## AI Resolution History
 
-AI Resolution History <img src="(<screenshots/AI-Resolution history.png>)" width="900"/>
-
-
+<img src="screenshots\AI-Resolution history.png" width="900"/>
 
 ---
 
@@ -315,8 +311,6 @@ AI Resolution History <img src="(<screenshots/AI-Resolution history.png>)" width
 ## API Response
 
 <img src="screenshots/postman.png" width="900"/>
-
----
 ---
 
 # 📊 Project Status
