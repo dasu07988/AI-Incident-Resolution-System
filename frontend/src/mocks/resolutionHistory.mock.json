@@ -1,0 +1,1178 @@
+[
+  {
+    "id": "INC-1028",
+    "incidentId": "INC-1028",
+    "title": "Audit log ingestion pipeline stalled",
+    "timestamp": "2026-07-17T09:43:17.351Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1444
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Database / Data integrity with severity Low",
+        "durationMs": 1031
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1650
+      }
+    ],
+    "prompt": "Incident detected: \"Audit log ingestion pipeline stalled\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.96,
+    "routingAccuracy": 0.9,
+    "resolutionAccuracy": 0.92
+  },
+  {
+    "id": "INC-1005",
+    "incidentId": "INC-1005",
+    "title": "Webhook delivery failures from card processor",
+    "timestamp": "2026-07-15T23:40:21.405Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 582
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Authentication / Data integrity with severity Medium",
+        "durationMs": 416
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 666
+      }
+    ],
+    "prompt": "Incident detected: \"Webhook delivery failures from card processor\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.79,
+    "routingAccuracy": 0.81,
+    "resolutionAccuracy": 0.94
+  },
+  {
+    "id": "INC-1030",
+    "incidentId": "INC-1030",
+    "title": "Payment gateway timeout on checkout",
+    "timestamp": "2026-07-15T01:29:58.695Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1246
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Infrastructure / Performance with severity Critical",
+        "durationMs": 890
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1424
+      }
+    ],
+    "prompt": "Incident detected: \"Payment gateway timeout on checkout\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as integration incident. Recommended contract testing against vendor schema changes.",
+    "retrievalPrecision": 0.92,
+    "routingAccuracy": 0.89,
+    "resolutionAccuracy": 0.95
+  },
+  {
+    "id": "INC-1004",
+    "incidentId": "INC-1004",
+    "title": "Database connection pool exhaustion",
+    "timestamp": "2026-07-09T16:23:13.255Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1523
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Database / Security with severity Medium",
+        "durationMs": 1088
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1741
+      }
+    ],
+    "prompt": "Incident detected: \"Database connection pool exhaustion\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.77,
+    "routingAccuracy": 0.82,
+    "resolutionAccuracy": 0.8
+  },
+  {
+    "id": "INC-1020",
+    "incidentId": "INC-1020",
+    "title": "Notification service delivering duplicate emails",
+    "timestamp": "2026-07-02T20:07:04.281Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1196
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as API latency / Availability with severity Medium",
+        "durationMs": 854
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1367
+      }
+    ],
+    "prompt": "Incident detected: \"Notification service delivering duplicate emails\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as data-integrity incident. Recommended idempotency key enforcement on the write path.",
+    "retrievalPrecision": 0.9,
+    "routingAccuracy": 0.9,
+    "resolutionAccuracy": 0.78
+  },
+  {
+    "id": "INC-1023",
+    "incidentId": "INC-1023",
+    "title": "Session store Redis cluster failover event",
+    "timestamp": "2026-06-27T15:50:45.698Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1502
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Fraud detection / Availability with severity Low",
+        "durationMs": 1073
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1716
+      }
+    ],
+    "prompt": "Incident detected: \"Session store Redis cluster failover event\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.76,
+    "routingAccuracy": 0.92,
+    "resolutionAccuracy": 0.82
+  },
+  {
+    "id": "INC-1021",
+    "incidentId": "INC-1021",
+    "title": "Vendor API schema change breaking parser",
+    "timestamp": "2026-06-26T15:52:52.170Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1065
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Third-party integration / Performance with severity Medium",
+        "durationMs": 761
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1218
+      }
+    ],
+    "prompt": "Incident detected: \"Vendor API schema change breaking parser\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.83,
+    "routingAccuracy": 0.94,
+    "resolutionAccuracy": 0.91
+  },
+  {
+    "id": "INC-1035",
+    "incidentId": "INC-1035",
+    "title": "Webhook delivery failures from card processor",
+    "timestamp": "2026-06-25T09:24:13.352Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 999
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Infrastructure / Data integrity with severity High",
+        "durationMs": 714
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1142
+      }
+    ],
+    "prompt": "Incident detected: \"Webhook delivery failures from card processor\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.93,
+    "routingAccuracy": 0.89,
+    "resolutionAccuracy": 0.71
+  },
+  {
+    "id": "INC-1000",
+    "incidentId": "INC-1000",
+    "title": "Payment gateway timeout on checkout",
+    "timestamp": "2026-06-22T08:25:35.818Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1199
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as API latency / Data integrity with severity Medium",
+        "durationMs": 856
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1370
+      }
+    ],
+    "prompt": "Incident detected: \"Payment gateway timeout on checkout\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.96,
+    "routingAccuracy": 0.91,
+    "resolutionAccuracy": 0.72
+  },
+  {
+    "id": "INC-1014",
+    "incidentId": "INC-1014",
+    "title": "Rate limiter blocking legitimate merchant traffic",
+    "timestamp": "2026-06-21T12:54:27.375Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 564
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Fraud detection / Availability with severity Medium",
+        "durationMs": 403
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 644
+      }
+    ],
+    "prompt": "Incident detected: \"Rate limiter blocking legitimate merchant traffic\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as infrastructure incident. Recommended scaling the connection pool and adding circuit breaker before retry.",
+    "retrievalPrecision": 0.84,
+    "routingAccuracy": 0.9,
+    "resolutionAccuracy": 0.91
+  },
+  {
+    "id": "INC-1033",
+    "incidentId": "INC-1033",
+    "title": "Authentication token expiry causing session drops",
+    "timestamp": "2026-06-21T06:15:07.709Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1618
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Authentication / Availability with severity High",
+        "durationMs": 1156
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1849
+      }
+    ],
+    "prompt": "Incident detected: \"Authentication token expiry causing session drops\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.81,
+    "routingAccuracy": 0.85,
+    "resolutionAccuracy": 0.95
+  },
+  {
+    "id": "INC-1026",
+    "incidentId": "INC-1026",
+    "title": "Login rate spike triggering false rate-limit",
+    "timestamp": "2026-06-18T11:59:33.815Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1110
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as API latency / Availability with severity Medium",
+        "durationMs": 793
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1269
+      }
+    ],
+    "prompt": "Incident detected: \"Login rate spike triggering false rate-limit\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as performance incident. Recommended composite index and query plan review.",
+    "retrievalPrecision": 0.85,
+    "routingAccuracy": 0.91,
+    "resolutionAccuracy": 0.74
+  },
+  {
+    "id": "INC-1010",
+    "incidentId": "INC-1010",
+    "title": "Load balancer misrouting to stale instance",
+    "timestamp": "2026-06-18T01:11:06.398Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1572
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Database / Data integrity with severity High",
+        "durationMs": 1123
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1796
+      }
+    ],
+    "prompt": "Incident detected: \"Load balancer misrouting to stale instance\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.78,
+    "routingAccuracy": 0.88,
+    "resolutionAccuracy": 0.79
+  },
+  {
+    "id": "INC-1017",
+    "incidentId": "INC-1017",
+    "title": "TLS certificate expiry on internal API gateway",
+    "timestamp": "2026-06-08T05:03:45.854Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 809
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Data pipeline / Data integrity with severity Critical",
+        "durationMs": 578
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 925
+      }
+    ],
+    "prompt": "Incident detected: \"TLS certificate expiry on internal API gateway\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as performance incident. Recommended composite index and query plan review.",
+    "retrievalPrecision": 0.77,
+    "routingAccuracy": 0.98,
+    "resolutionAccuracy": 0.79
+  },
+  {
+    "id": "INC-1016",
+    "incidentId": "INC-1016",
+    "title": "Queue backlog on refund processing worker",
+    "timestamp": "2026-06-07T05:02:03.611Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1268
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Authentication / Performance with severity Low",
+        "durationMs": 906
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1450
+      }
+    ],
+    "prompt": "Incident detected: \"Queue backlog on refund processing worker\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as infrastructure incident. Recommended scaling the connection pool and adding circuit breaker before retry.",
+    "retrievalPrecision": 0.82,
+    "routingAccuracy": 0.95,
+    "resolutionAccuracy": 0.83
+  },
+  {
+    "id": "INC-1025",
+    "incidentId": "INC-1025",
+    "title": "Incorrect tax calculation for EU merchants",
+    "timestamp": "2026-06-07T00:43:40.852Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 805
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Authentication / Availability with severity Critical",
+        "durationMs": 575
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 920
+      }
+    ],
+    "prompt": "Incident detected: \"Incorrect tax calculation for EU merchants\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.88,
+    "routingAccuracy": 0.87,
+    "resolutionAccuracy": 0.73
+  },
+  {
+    "id": "INC-1003",
+    "incidentId": "INC-1003",
+    "title": "Authentication token expiry causing session drops",
+    "timestamp": "2026-06-04T13:07:33.449Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 641
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Fraud detection / Data integrity with severity Critical",
+        "durationMs": 458
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 732
+      }
+    ],
+    "prompt": "Incident detected: \"Authentication token expiry causing session drops\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as integration incident. Recommended contract testing against vendor schema changes.",
+    "retrievalPrecision": 0.8,
+    "routingAccuracy": 0.93,
+    "resolutionAccuracy": 0.79
+  },
+  {
+    "id": "INC-1008",
+    "incidentId": "INC-1008",
+    "title": "Data pipeline lag in nightly settlement job",
+    "timestamp": "2026-06-02T12:22:40.449Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 593
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Third-party integration / Security with severity Low",
+        "durationMs": 424
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 678
+      }
+    ],
+    "prompt": "Incident detected: \"Data pipeline lag in nightly settlement job\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as performance incident. Recommended composite index and query plan review.",
+    "retrievalPrecision": 0.77,
+    "routingAccuracy": 0.95,
+    "resolutionAccuracy": 0.76
+  },
+  {
+    "id": "INC-1034",
+    "incidentId": "INC-1034",
+    "title": "Database connection pool exhaustion",
+    "timestamp": "2026-06-02T06:17:05.544Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 455
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Payment gateway / Security with severity Low",
+        "durationMs": 325
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 520
+      }
+    ],
+    "prompt": "Incident detected: \"Database connection pool exhaustion\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as infrastructure incident. Recommended scaling the connection pool and adding circuit breaker before retry.",
+    "retrievalPrecision": 0.96,
+    "routingAccuracy": 0.91,
+    "resolutionAccuracy": 0.8
+  },
+  {
+    "id": "INC-1011",
+    "incidentId": "INC-1011",
+    "title": "Elevated 5xx errors on merchant onboarding",
+    "timestamp": "2026-06-01T10:05:52.762Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 608
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Fraud detection / Performance with severity Medium",
+        "durationMs": 434
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 695
+      }
+    ],
+    "prompt": "Incident detected: \"Elevated 5xx errors on merchant onboarding\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as data-integrity incident. Recommended idempotency key enforcement on the write path.",
+    "retrievalPrecision": 0.9,
+    "routingAccuracy": 0.93,
+    "resolutionAccuracy": 0.9
+  },
+  {
+    "id": "INC-1029",
+    "incidentId": "INC-1029",
+    "title": "Merchant dashboard showing stale balance data",
+    "timestamp": "2026-05-30T15:42:05.840Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 293
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Database / Availability with severity Critical",
+        "durationMs": 209
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 335
+      }
+    ],
+    "prompt": "Incident detected: \"Merchant dashboard showing stale balance data\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as integration incident. Recommended contract testing against vendor schema changes.",
+    "retrievalPrecision": 0.79,
+    "routingAccuracy": 0.81,
+    "resolutionAccuracy": 0.77
+  },
+  {
+    "id": "INC-1012",
+    "incidentId": "INC-1012",
+    "title": "Cache invalidation failure on pricing service",
+    "timestamp": "2026-05-29T08:32:40.441Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1328
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Authentication / Performance with severity High",
+        "durationMs": 949
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1518
+      }
+    ],
+    "prompt": "Incident detected: \"Cache invalidation failure on pricing service\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.94,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.75
+  },
+  {
+    "id": "INC-1040",
+    "incidentId": "INC-1040",
+    "title": "Load balancer misrouting to stale instance",
+    "timestamp": "2026-05-19T20:46:17.863Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 857
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Third-party integration / Security with severity High",
+        "durationMs": 612
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 980
+      }
+    ],
+    "prompt": "Incident detected: \"Load balancer misrouting to stale instance\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as performance incident. Recommended composite index and query plan review.",
+    "retrievalPrecision": 0.84,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.92
+  },
+  {
+    "id": "INC-1022",
+    "incidentId": "INC-1022",
+    "title": "Disk usage nearing capacity on log storage node",
+    "timestamp": "2026-05-19T12:47:15.071Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1121
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as API latency / Security with severity Critical",
+        "durationMs": 801
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1281
+      }
+    ],
+    "prompt": "Incident detected: \"Disk usage nearing capacity on log storage node\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as integration incident. Recommended contract testing against vendor schema changes.",
+    "retrievalPrecision": 0.91,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.95
+  },
+  {
+    "id": "INC-1015",
+    "incidentId": "INC-1015",
+    "title": "Currency conversion rounding discrepancy",
+    "timestamp": "2026-05-19T00:59:50.701Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1697
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Database / Performance with severity High",
+        "durationMs": 1212
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1939
+      }
+    ],
+    "prompt": "Incident detected: \"Currency conversion rounding discrepancy\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.92,
+    "routingAccuracy": 0.94,
+    "resolutionAccuracy": 0.75
+  },
+  {
+    "id": "INC-1018",
+    "incidentId": "INC-1018",
+    "title": "Memory leak in reconciliation microservice",
+    "timestamp": "2026-05-18T15:05:57.675Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1303
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Third-party integration / Security with severity High",
+        "durationMs": 931
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1489
+      }
+    ],
+    "prompt": "Incident detected: \"Memory leak in reconciliation microservice\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.76,
+    "routingAccuracy": 0.94,
+    "resolutionAccuracy": 0.97
+  },
+  {
+    "id": "INC-1024",
+    "incidentId": "INC-1024",
+    "title": "Batch job deadlock in settlement database",
+    "timestamp": "2026-05-17T00:46:37.161Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 899
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Database / Performance with severity Medium",
+        "durationMs": 642
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1028
+      }
+    ],
+    "prompt": "Incident detected: \"Batch job deadlock in settlement database\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as data-integrity incident. Recommended idempotency key enforcement on the write path.",
+    "retrievalPrecision": 0.84,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.87
+  },
+  {
+    "id": "INC-1007",
+    "incidentId": "INC-1007",
+    "title": "Fraud detection false positive surge",
+    "timestamp": "2026-05-16T10:42:10.082Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 348
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Authentication / Data integrity with severity High",
+        "durationMs": 248
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 398
+      }
+    ],
+    "prompt": "Incident detected: \"Fraud detection false positive surge\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.91,
+    "routingAccuracy": 0.94,
+    "resolutionAccuracy": 0.85
+  },
+  {
+    "id": "INC-1036",
+    "incidentId": "INC-1036",
+    "title": "API latency spike on /transactions endpoint",
+    "timestamp": "2026-05-16T02:46:18.333Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1641
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Database / Performance with severity Critical",
+        "durationMs": 1172
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1875
+      }
+    ],
+    "prompt": "Incident detected: \"API latency spike on /transactions endpoint\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as integration incident. Recommended contract testing against vendor schema changes.",
+    "retrievalPrecision": 0.96,
+    "routingAccuracy": 0.86,
+    "resolutionAccuracy": 0.75
+  },
+  {
+    "id": "INC-1001",
+    "incidentId": "INC-1001",
+    "title": "Duplicate transaction records detected",
+    "timestamp": "2026-05-16T00:04:55.259Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1514
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Third-party integration / Data integrity with severity Low",
+        "durationMs": 1081
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1730
+      }
+    ],
+    "prompt": "Incident detected: \"Duplicate transaction records detected\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.95,
+    "routingAccuracy": 0.95,
+    "resolutionAccuracy": 0.72
+  },
+  {
+    "id": "INC-1032",
+    "incidentId": "INC-1032",
+    "title": "Slow report generation for monthly reconciliation",
+    "timestamp": "2026-05-12T22:22:33.173Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1615
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Infrastructure / Security with severity High",
+        "durationMs": 1154
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1846
+      }
+    ],
+    "prompt": "Incident detected: \"Slow report generation for monthly reconciliation\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.83,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.87
+  },
+  {
+    "id": "INC-1039",
+    "incidentId": "INC-1039",
+    "title": "Third-party FX rate provider outage",
+    "timestamp": "2026-05-12T01:38:36.507Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 591
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Fraud detection / Availability with severity High",
+        "durationMs": 422
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 676
+      }
+    ],
+    "prompt": "Incident detected: \"Third-party FX rate provider outage\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as integration incident. Recommended contract testing against vendor schema changes.",
+    "retrievalPrecision": 0.83,
+    "routingAccuracy": 0.85,
+    "resolutionAccuracy": 0.82
+  },
+  {
+    "id": "INC-1006",
+    "incidentId": "INC-1006",
+    "title": "API latency spike on /transactions endpoint",
+    "timestamp": "2026-05-11T10:58:26.097Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1464
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as API latency / Performance with severity High",
+        "durationMs": 1046
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1674
+      }
+    ],
+    "prompt": "Incident detected: \"API latency spike on /transactions endpoint\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.94,
+    "routingAccuracy": 0.9,
+    "resolutionAccuracy": 0.92
+  },
+  {
+    "id": "INC-1009",
+    "incidentId": "INC-1009",
+    "title": "Third-party FX rate provider outage",
+    "timestamp": "2026-05-11T08:17:52.941Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 947
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Payment gateway / Security with severity Medium",
+        "durationMs": 676
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1082
+      }
+    ],
+    "prompt": "Incident detected: \"Third-party FX rate provider outage\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.97,
+    "routingAccuracy": 0.95,
+    "resolutionAccuracy": 0.82
+  },
+  {
+    "id": "INC-1027",
+    "incidentId": "INC-1027",
+    "title": "Card tokenization service degraded response time",
+    "timestamp": "2026-05-11T02:40:03.293Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1668
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Infrastructure / Data integrity with severity Medium",
+        "durationMs": 1192
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1907
+      }
+    ],
+    "prompt": "Incident detected: \"Card tokenization service degraded response time\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.95,
+    "routingAccuracy": 0.91,
+    "resolutionAccuracy": 0.86
+  },
+  {
+    "id": "INC-1013",
+    "incidentId": "INC-1013",
+    "title": "SFTP batch upload silently failing",
+    "timestamp": "2026-05-10T10:41:38.486Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 884
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as API latency / Data integrity with severity Medium",
+        "durationMs": 631
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1010
+      }
+    ],
+    "prompt": "Incident detected: \"SFTP batch upload silently failing\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as integration incident. Recommended contract testing against vendor schema changes.",
+    "retrievalPrecision": 0.88,
+    "routingAccuracy": 0.92,
+    "resolutionAccuracy": 0.94
+  },
+  {
+    "id": "INC-1041",
+    "incidentId": "INC-1041",
+    "title": "Elevated 5xx errors on merchant onboarding",
+    "timestamp": "2026-05-07T17:33:41.561Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1093
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Database / Data integrity with severity High",
+        "durationMs": 781
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1249
+      }
+    ],
+    "prompt": "Incident detected: \"Elevated 5xx errors on merchant onboarding\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as security-adjacent incident. Recommended automated certificate renewal alerting 14 days ahead of expiry.",
+    "retrievalPrecision": 0.81,
+    "routingAccuracy": 0.91,
+    "resolutionAccuracy": 0.97
+  },
+  {
+    "id": "INC-1037",
+    "incidentId": "INC-1037",
+    "title": "Fraud detection false positive surge",
+    "timestamp": "2026-05-05T15:19:44.725Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1601
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Third-party integration / Security with severity Low",
+        "durationMs": 1144
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1830
+      }
+    ],
+    "prompt": "Incident detected: \"Fraud detection false positive surge\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as data-integrity incident. Recommended idempotency key enforcement on the write path.",
+    "retrievalPrecision": 0.97,
+    "routingAccuracy": 0.82,
+    "resolutionAccuracy": 0.91
+  },
+  {
+    "id": "INC-1019",
+    "incidentId": "INC-1019",
+    "title": "Incorrect retry logic causing double charges",
+    "timestamp": "2026-05-04T21:33:49.416Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 749
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Third-party integration / Availability with severity High",
+        "durationMs": 535
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 856
+      }
+    ],
+    "prompt": "Incident detected: \"Incorrect retry logic causing double charges\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as performance incident. Recommended composite index and query plan review.",
+    "retrievalPrecision": 0.92,
+    "routingAccuracy": 0.87,
+    "resolutionAccuracy": 0.93
+  },
+  {
+    "id": "INC-1002",
+    "incidentId": "INC-1002",
+    "title": "Slow report generation for monthly reconciliation",
+    "timestamp": "2026-05-02T01:21:08.797Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 1134
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Third-party integration / Data integrity with severity Critical",
+        "durationMs": 810
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 1296
+      }
+    ],
+    "prompt": "Incident detected: \"Slow report generation for monthly reconciliation\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.85,
+    "routingAccuracy": 0.81,
+    "resolutionAccuracy": 0.83
+  },
+  {
+    "id": "INC-1038",
+    "incidentId": "INC-1038",
+    "title": "Data pipeline lag in nightly settlement job",
+    "timestamp": "2026-05-01T14:43:24.548Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 536
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Fraud detection / Performance with severity Medium",
+        "durationMs": 383
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 613
+      }
+    ],
+    "prompt": "Incident detected: \"Data pipeline lag in nightly settlement job\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as integration incident. Recommended contract testing against vendor schema changes.",
+    "retrievalPrecision": 0.89,
+    "routingAccuracy": 0.96,
+    "resolutionAccuracy": 0.96
+  },
+  {
+    "id": "INC-1031",
+    "incidentId": "INC-1031",
+    "title": "Duplicate transaction records detected",
+    "timestamp": "2026-05-01T02:27:18.707Z",
+    "agentSteps": [
+      {
+        "agent": "Retriever",
+        "action": "Queried Pinecone KB for similar past incidents and runbooks",
+        "durationMs": 636
+      },
+      {
+        "agent": "Classifier",
+        "action": "Classified as Fraud detection / Data integrity with severity Critical",
+        "durationMs": 454
+      },
+      {
+        "agent": "Resolution",
+        "action": "Generated root cause hypothesis and recommended actions",
+        "durationMs": 727
+      }
+    ],
+    "prompt": "Incident detected: \"Duplicate transaction records detected\". Retrieve related runbooks, classify severity/category, and propose a resolution.",
+    "response": "Classified as reliability incident. Recommended exponential backoff with jitter and dedup key on retries.",
+    "retrievalPrecision": 0.81,
+    "routingAccuracy": 0.96,
+    "resolutionAccuracy": 0.73
+  }
+]

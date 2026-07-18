@@ -1,0 +1,143 @@
+{
+  "trend": [
+    {
+      "month": "Feb",
+      "incidents": 24,
+      "resolved": 12
+    },
+    {
+      "month": "Mar",
+      "incidents": 29,
+      "resolved": 17
+    },
+    {
+      "month": "Apr",
+      "incidents": 22,
+      "resolved": 11
+    },
+    {
+      "month": "May",
+      "incidents": 16,
+      "resolved": 12
+    },
+    {
+      "month": "Jun",
+      "incidents": 31,
+      "resolved": 17
+    },
+    {
+      "month": "Jul",
+      "incidents": 32,
+      "resolved": 25
+    }
+  ],
+  "severityDistribution": [
+    {
+      "name": "Critical",
+      "value": 9
+    },
+    {
+      "name": "High",
+      "value": 13
+    },
+    {
+      "name": "Medium",
+      "value": 13
+    },
+    {
+      "name": "Low",
+      "value": 7
+    }
+  ],
+  "categoryBreakdown": [
+    {
+      "name": "Infrastructure",
+      "value": 8
+    },
+    {
+      "name": "Third-party integration",
+      "value": 7
+    },
+    {
+      "name": "Fraud detection",
+      "value": 6
+    },
+    {
+      "name": "Payment gateway",
+      "value": 6
+    },
+    {
+      "name": "Authentication",
+      "value": 5
+    },
+    {
+      "name": "API latency",
+      "value": 5
+    },
+    {
+      "name": "Database",
+      "value": 3
+    },
+    {
+      "name": "Data pipeline",
+      "value": 2
+    }
+  ],
+  "resolutionStats": {
+    "totalIncidents": 42,
+    "resolved": 10,
+    "successRate": 23.8,
+    "avgResolutionHours": 13.7,
+    "avgLatencyMs": 3043
+  },
+  "monthlyReports": [
+    {
+      "month": "Feb",
+      "totalIncidents": 24,
+      "resolutionRate": 87.4,
+      "avgResolutionTimeHrs": 4,
+      "avgRetrievalPrecision": 0.95,
+      "avgRoutingAccuracy": 0.93
+    },
+    {
+      "month": "Mar",
+      "totalIncidents": 29,
+      "resolutionRate": 71.7,
+      "avgResolutionTimeHrs": 10.5,
+      "avgRetrievalPrecision": 0.88,
+      "avgRoutingAccuracy": 0.94
+    },
+    {
+      "month": "Apr",
+      "totalIncidents": 22,
+      "resolutionRate": 81.7,
+      "avgResolutionTimeHrs": 8.1,
+      "avgRetrievalPrecision": 0.89,
+      "avgRoutingAccuracy": 0.9
+    },
+    {
+      "month": "May",
+      "totalIncidents": 16,
+      "resolutionRate": 94.1,
+      "avgResolutionTimeHrs": 12,
+      "avgRetrievalPrecision": 0.8,
+      "avgRoutingAccuracy": 0.85
+    },
+    {
+      "month": "Jun",
+      "totalIncidents": 31,
+      "resolutionRate": 70.9,
+      "avgResolutionTimeHrs": 6.2,
+      "avgRetrievalPrecision": 0.92,
+      "avgRoutingAccuracy": 0.92
+    },
+    {
+      "month": "Jul",
+      "totalIncidents": 32,
+      "resolutionRate": 73.3,
+      "avgResolutionTimeHrs": 5.8,
+      "avgRetrievalPrecision": 0.9,
+      "avgRoutingAccuracy": 0.93
+    }
+  ]
+}

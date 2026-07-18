@@ -1,0 +1,30 @@
+{
+  "api": {
+    "baseUrl": "https://api.Enterprise AI-incident.example.com/v1",
+    "version": "v1.4.2",
+    "authMethod": "Bearer token",
+    "status": "Connected"
+  },
+  "aiModel": {
+    "provider": "Google",
+    "model": "Gemini Flash-Lite",
+    "role": "Classifier + Resolution agent",
+    "avgLatencyMs": 3043,
+    "status": "Operational"
+  },
+  "pinecone": {
+    "indexName": "Enterprise AI-incident-kb",
+    "dimensions": 3072,
+    "metric": "Cosine",
+    "region": "AWS us-east-1",
+    "vectorCount": 18420,
+    "status": "Operational"
+  },
+  "system": {
+    "orchestrator": "n8n v2.26.8",
+    "deployment": "Docker on AWS EC2",
+    "uptime": "99.94%",
+    "lastDeploy": "2026-07-12T09:20:00Z",
+    "status": "Healthy"
+  }
+}

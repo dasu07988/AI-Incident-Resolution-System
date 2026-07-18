@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "INC-1001",
+    "title": "Docker Container Crash",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Critical",
+    "category": "Container",
+    "classification": "Infrastructure",
+    "status": "In Progress",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Rollback the latest deployment.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1001] Docker Container Crash",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1001"
+    },
+    "createdAt": "2026-07-01T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.91,
+    "routingAccuracy": 0.94,
+    "resolutionAccuracy": 0.94,
+    "latencyMs": 2427,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1002",
+    "title": "API Gateway Timeout",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Infrastructure",
+    "classification": "Availability",
+    "status": "Resolved",
+    "rootCause": "Docker container exited unexpectedly.",
+    "aiResolution": "Clear Redis cache and optimize memory usage.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1002] API Gateway Timeout",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1002"
+    },
+    "createdAt": "2026-07-02T10:00:00Z",
+    "resolvedAt": "2026-07-02T14:30:00Z",
+    "retrievalPrecision": 0.99,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.91,
+    "latencyMs": 4178,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1003",
+    "title": "Docker Container Crash",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Container",
+    "classification": "Infrastructure",
+    "status": "Open",
+    "rootCause": "Redis memory limit exceeded.",
+    "aiResolution": "Clear Redis cache and optimize memory usage.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1003] Docker Container Crash",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1003"
+    },
+    "createdAt": "2026-07-03T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.88,
+    "routingAccuracy": 0.88,
+    "resolutionAccuracy": 0.95,
+    "latencyMs": 3728,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1004",
+    "title": "API Gateway Timeout",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Critical",
+    "category": "Infrastructure",
+    "classification": "Availability",
+    "status": "Resolved",
+    "rootCause": "Redis memory limit exceeded.",
+    "aiResolution": "Clear Redis cache and optimize memory usage.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1004] API Gateway Timeout",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1004"
+    },
+    "createdAt": "2026-07-04T10:00:00Z",
+    "resolvedAt": "2026-07-04T14:30:00Z",
+    "retrievalPrecision": 0.92,
+    "routingAccuracy": 0.95,
+    "resolutionAccuracy": 0.9,
+    "latencyMs": 1078,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1005",
+    "title": "Database Connection Pool Exhausted",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Database",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Expired TLS certificate.",
+    "aiResolution": "Update Kubernetes deployment configuration.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1005] Database Connection Pool Exhausted",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1005"
+    },
+    "createdAt": "2026-07-05T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.96,
+    "routingAccuracy": 0.95,
+    "resolutionAccuracy": 0.9,
+    "latencyMs": 2515,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1006",
+    "title": "Database Connection Pool Exhausted",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Database",
+    "classification": "Performance",
+    "status": "In Progress",
+    "rootCause": "Database connection pool limit reached.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1006] Database Connection Pool Exhausted",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1006"
+    },
+    "createdAt": "2026-07-06T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.88,
+    "routingAccuracy": 0.88,
+    "resolutionAccuracy": 0.89,
+    "latencyMs": 2661,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1007",
+    "title": "Redis Cache Memory Exhausted",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Database",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Expired TLS certificate.",
+    "aiResolution": "Clear Redis cache and optimize memory usage.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1007] Redis Cache Memory Exhausted",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1007"
+    },
+    "createdAt": "2026-07-07T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.98,
+    "routingAccuracy": 0.91,
+    "resolutionAccuracy": 0.89,
+    "latencyMs": 4025,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1008",
+    "title": "RabbitMQ Queue Backlog",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "Messaging",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Database connection pool limit reached.",
+    "aiResolution": "Scale deployment and increase resource limits.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1008] RabbitMQ Queue Backlog",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1008"
+    },
+    "createdAt": "2026-07-08T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.85,
+    "routingAccuracy": 0.92,
+    "resolutionAccuracy": 0.92,
+    "latencyMs": 1240,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1009",
+    "title": "Memory Leak in AI Analyzer",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1009] Memory Leak in AI Analyzer",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1009"
+    },
+    "createdAt": "2026-07-09T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.98,
+    "routingAccuracy": 0.97,
+    "resolutionAccuracy": 0.92,
+    "latencyMs": 3461,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1010",
+    "title": "Disk Usage Above 95%",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Storage",
+    "classification": "Infrastructure",
+    "status": "In Progress",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Restart message broker and monitor queue.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1010] Disk Usage Above 95%",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1010"
+    },
+    "createdAt": "2026-07-10T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.99,
+    "routingAccuracy": 0.9,
+    "resolutionAccuracy": 0.94,
+    "latencyMs": 2265,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1011",
+    "title": "Database Connection Pool Exhausted",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Database",
+    "classification": "Performance",
+    "status": "Resolved",
+    "rootCause": "Kubernetes deployment misconfiguration.",
+    "aiResolution": "Update Kubernetes deployment configuration.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1011] Database Connection Pool Exhausted",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1011"
+    },
+    "createdAt": "2026-07-11T10:00:00Z",
+    "resolvedAt": "2026-07-11T14:30:00Z",
+    "retrievalPrecision": 0.97,
+    "routingAccuracy": 0.99,
+    "resolutionAccuracy": 0.86,
+    "latencyMs": 2663,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1012",
+    "title": "Memory Leak in AI Analyzer",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Database connection pool limit reached.",
+    "aiResolution": "Clear Redis cache and optimize memory usage.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1012] Memory Leak in AI Analyzer",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1012"
+    },
+    "createdAt": "2026-07-12T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.92,
+    "routingAccuracy": 0.96,
+    "resolutionAccuracy": 0.92,
+    "latencyMs": 4030,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1013",
+    "title": "High CPU Usage on AI Service",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "Resolved",
+    "rootCause": "Message queue backlog due to traffic spike.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1013] High CPU Usage on AI Service",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1013"
+    },
+    "createdAt": "2026-07-13T10:00:00Z",
+    "resolvedAt": "2026-07-13T14:30:00Z",
+    "retrievalPrecision": 0.95,
+    "routingAccuracy": 0.98,
+    "resolutionAccuracy": 0.99,
+    "latencyMs": 4318,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1014",
+    "title": "High CPU Usage on AI Service",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Message queue backlog due to traffic spike.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1014] High CPU Usage on AI Service",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1014"
+    },
+    "createdAt": "2026-07-14T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.88,
+    "routingAccuracy": 0.94,
+    "resolutionAccuracy": 0.99,
+    "latencyMs": 2034,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1015",
+    "title": "DNS Resolution Failure",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Networking",
+    "classification": "Infrastructure",
+    "status": "Resolved",
+    "rootCause": "Docker container exited unexpectedly.",
+    "aiResolution": "Clear Redis cache and optimize memory usage.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1015] DNS Resolution Failure",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1015"
+    },
+    "createdAt": "2026-07-15T10:00:00Z",
+    "resolvedAt": "2026-07-15T14:30:00Z",
+    "retrievalPrecision": 0.86,
+    "routingAccuracy": 0.97,
+    "resolutionAccuracy": 0.94,
+    "latencyMs": 1183,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1016",
+    "title": "High CPU Usage on AI Service",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "Resolved",
+    "rootCause": "Kubernetes deployment misconfiguration.",
+    "aiResolution": "Increase database connection pool size.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1016] High CPU Usage on AI Service",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1016"
+    },
+    "createdAt": "2026-07-16T10:00:00Z",
+    "resolvedAt": "2026-07-16T14:30:00Z",
+    "retrievalPrecision": 0.9,
+    "routingAccuracy": 0.97,
+    "resolutionAccuracy": 0.99,
+    "latencyMs": 1156,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1017",
+    "title": "Disk Usage Above 95%",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Storage",
+    "classification": "Infrastructure",
+    "status": "Resolved",
+    "rootCause": "Redis memory limit exceeded.",
+    "aiResolution": "Increase database connection pool size.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1017] Disk Usage Above 95%",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1017"
+    },
+    "createdAt": "2026-07-17T10:00:00Z",
+    "resolvedAt": "2026-07-17T14:30:00Z",
+    "retrievalPrecision": 0.88,
+    "routingAccuracy": 0.88,
+    "resolutionAccuracy": 0.92,
+    "latencyMs": 1698,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1018",
+    "title": "Memory Leak in AI Analyzer",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Network DNS resolution failure.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1018] Memory Leak in AI Analyzer",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1018"
+    },
+    "createdAt": "2026-07-18T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.94,
+    "routingAccuracy": 0.86,
+    "resolutionAccuracy": 0.99,
+    "latencyMs": 911,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1019",
+    "title": "High CPU Usage on AI Service",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Critical",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "In Progress",
+    "rootCause": "Database connection pool limit reached.",
+    "aiResolution": "Rollback the latest deployment.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1019] High CPU Usage on AI Service",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1019"
+    },
+    "createdAt": "2026-07-19T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.95,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.9,
+    "latencyMs": 3215,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1020",
+    "title": "Redis Cache Memory Exhausted",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Database",
+    "classification": "Performance",
+    "status": "Resolved",
+    "rootCause": "Network DNS resolution failure.",
+    "aiResolution": "Renew TLS certificate and reload gateway.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1020] Redis Cache Memory Exhausted",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1020"
+    },
+    "createdAt": "2026-07-20T10:00:00Z",
+    "resolvedAt": "2026-07-20T14:30:00Z",
+    "retrievalPrecision": 0.85,
+    "routingAccuracy": 0.99,
+    "resolutionAccuracy": 0.94,
+    "latencyMs": 4316,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1021",
+    "title": "TLS Certificate Expired",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Critical",
+    "category": "Security",
+    "classification": "Configuration",
+    "status": "Escalated",
+    "rootCause": "Expired TLS certificate.",
+    "aiResolution": "Update Kubernetes deployment configuration.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1021] TLS Certificate Expired",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1021"
+    },
+    "createdAt": "2026-07-21T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.99,
+    "routingAccuracy": 0.95,
+    "resolutionAccuracy": 0.99,
+    "latencyMs": 1513,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1022",
+    "title": "Memory Leak in AI Analyzer",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "Escalated",
+    "rootCause": "Database connection pool limit reached.",
+    "aiResolution": "Increase database connection pool size.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1022] Memory Leak in AI Analyzer",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1022"
+    },
+    "createdAt": "2026-07-22T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.88,
+    "routingAccuracy": 0.97,
+    "resolutionAccuracy": 0.92,
+    "latencyMs": 1208,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1023",
+    "title": "Database Connection Pool Exhausted",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Critical",
+    "category": "Database",
+    "classification": "Performance",
+    "status": "In Progress",
+    "rootCause": "Database connection pool limit reached.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1023] Database Connection Pool Exhausted",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1023"
+    },
+    "createdAt": "2026-07-23T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.85,
+    "routingAccuracy": 0.85,
+    "resolutionAccuracy": 0.98,
+    "latencyMs": 1244,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1024",
+    "title": "RabbitMQ Queue Backlog",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Messaging",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1024] RabbitMQ Queue Backlog",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1024"
+    },
+    "createdAt": "2026-07-24T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.95,
+    "routingAccuracy": 0.9,
+    "resolutionAccuracy": 0.94,
+    "latencyMs": 1867,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1025",
+    "title": "Kafka Broker Unreachable",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Messaging",
+    "classification": "Availability",
+    "status": "Resolved",
+    "rootCause": "Message queue backlog due to traffic spike.",
+    "aiResolution": "Increase database connection pool size.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1025] Kafka Broker Unreachable",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1025"
+    },
+    "createdAt": "2026-07-25T10:00:00Z",
+    "resolvedAt": "2026-07-25T14:30:00Z",
+    "retrievalPrecision": 0.85,
+    "routingAccuracy": 0.99,
+    "resolutionAccuracy": 0.91,
+    "latencyMs": 3264,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1026",
+    "title": "Nginx Reverse Proxy Failure",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "Networking",
+    "classification": "Configuration",
+    "status": "In Progress",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Renew TLS certificate and reload gateway.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1026] Nginx Reverse Proxy Failure",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1026"
+    },
+    "createdAt": "2026-07-26T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.95,
+    "routingAccuracy": 0.89,
+    "resolutionAccuracy": 0.92,
+    "latencyMs": 2629,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1027",
+    "title": "Nginx Reverse Proxy Failure",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Critical",
+    "category": "Networking",
+    "classification": "Configuration",
+    "status": "Resolved",
+    "rootCause": "Database connection pool limit reached.",
+    "aiResolution": "Rollback the latest deployment.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1027] Nginx Reverse Proxy Failure",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1027"
+    },
+    "createdAt": "2026-07-27T10:00:00Z",
+    "resolvedAt": "2026-07-27T14:30:00Z",
+    "retrievalPrecision": 0.92,
+    "routingAccuracy": 0.97,
+    "resolutionAccuracy": 0.87,
+    "latencyMs": 1516,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1028",
+    "title": "Prometheus Alert Storm",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "Monitoring",
+    "classification": "Configuration",
+    "status": "Open",
+    "rootCause": "Redis memory limit exceeded.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1028] Prometheus Alert Storm",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1028"
+    },
+    "createdAt": "2026-07-28T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.89,
+    "routingAccuracy": 0.93,
+    "resolutionAccuracy": 0.92,
+    "latencyMs": 3000,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1029",
+    "title": "Docker Container Crash",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Container",
+    "classification": "Infrastructure",
+    "status": "In Progress",
+    "rootCause": "Kubernetes deployment misconfiguration.",
+    "aiResolution": "Rollback the latest deployment.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1029] Docker Container Crash",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1029"
+    },
+    "createdAt": "2026-07-01T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.93,
+    "routingAccuracy": 0.88,
+    "resolutionAccuracy": 0.95,
+    "latencyMs": 2099,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1030",
+    "title": "Memory Leak in AI Analyzer",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "In Progress",
+    "rootCause": "Message queue backlog due to traffic spike.",
+    "aiResolution": "Clear Redis cache and optimize memory usage.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1030] Memory Leak in AI Analyzer",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1030"
+    },
+    "createdAt": "2026-07-02T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.97,
+    "routingAccuracy": 0.87,
+    "resolutionAccuracy": 0.95,
+    "latencyMs": 1533,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1031",
+    "title": "DNS Resolution Failure",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Networking",
+    "classification": "Infrastructure",
+    "status": "Open",
+    "rootCause": "Redis memory limit exceeded.",
+    "aiResolution": "Scale deployment and increase resource limits.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1031] DNS Resolution Failure",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1031"
+    },
+    "createdAt": "2026-07-03T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.94,
+    "routingAccuracy": 0.93,
+    "resolutionAccuracy": 0.87,
+    "latencyMs": 3570,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1032",
+    "title": "Disk Usage Above 95%",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Storage",
+    "classification": "Infrastructure",
+    "status": "Resolved",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Restart message broker and monitor queue.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1032] Disk Usage Above 95%",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1032"
+    },
+    "createdAt": "2026-07-04T10:00:00Z",
+    "resolvedAt": "2026-07-04T14:30:00Z",
+    "retrievalPrecision": 0.88,
+    "routingAccuracy": 0.87,
+    "resolutionAccuracy": 0.88,
+    "latencyMs": 846,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1033",
+    "title": "Kubernetes Pod CrashLoopBackOff",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Container",
+    "classification": "Availability",
+    "status": "Open",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Renew TLS certificate and reload gateway.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1033] Kubernetes Pod CrashLoopBackOff",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1033"
+    },
+    "createdAt": "2026-07-05T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.97,
+    "routingAccuracy": 0.93,
+    "resolutionAccuracy": 0.95,
+    "latencyMs": 4440,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1034",
+    "title": "Database Connection Pool Exhausted",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Database",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Kubernetes deployment misconfiguration.",
+    "aiResolution": "Restart affected service and verify health checks.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1034] Database Connection Pool Exhausted",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1034"
+    },
+    "createdAt": "2026-07-06T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.87,
+    "routingAccuracy": 0.9,
+    "resolutionAccuracy": 0.99,
+    "latencyMs": 1515,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1035",
+    "title": "Memory Leak in AI Analyzer",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Low",
+    "category": "Application",
+    "classification": "Performance",
+    "status": "Open",
+    "rootCause": "Expired TLS certificate.",
+    "aiResolution": "Renew TLS certificate and reload gateway.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1035] Memory Leak in AI Analyzer",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1035"
+    },
+    "createdAt": "2026-07-07T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.95,
+    "routingAccuracy": 0.94,
+    "resolutionAccuracy": 0.91,
+    "latencyMs": 3242,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1036",
+    "title": "Kafka Broker Unreachable",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Messaging",
+    "classification": "Availability",
+    "status": "Open",
+    "rootCause": "Expired TLS certificate.",
+    "aiResolution": "Increase database connection pool size.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1036] Kafka Broker Unreachable",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1036"
+    },
+    "createdAt": "2026-07-08T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.97,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.97,
+    "latencyMs": 3763,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1037",
+    "title": "Docker Container Crash",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "High",
+    "category": "Container",
+    "classification": "Infrastructure",
+    "status": "Escalated",
+    "rootCause": "Database connection pool limit reached.",
+    "aiResolution": "Increase database connection pool size.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1037] Docker Container Crash",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1037"
+    },
+    "createdAt": "2026-07-09T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.99,
+    "routingAccuracy": 0.85,
+    "resolutionAccuracy": 0.87,
+    "latencyMs": 1801,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1038",
+    "title": "CI/CD Deployment Failure",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "CI/CD",
+    "classification": "Configuration",
+    "status": "Escalated",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Clear Redis cache and optimize memory usage.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1038] CI/CD Deployment Failure",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1038"
+    },
+    "createdAt": "2026-07-10T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.87,
+    "routingAccuracy": 0.84,
+    "resolutionAccuracy": 0.96,
+    "latencyMs": 2246,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1039",
+    "title": "TLS Certificate Expired",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "Security",
+    "classification": "Configuration",
+    "status": "Resolved",
+    "rootCause": "Docker container exited unexpectedly.",
+    "aiResolution": "Increase database connection pool size.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1039] TLS Certificate Expired",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1039"
+    },
+    "createdAt": "2026-07-11T10:00:00Z",
+    "resolvedAt": "2026-07-11T14:30:00Z",
+    "retrievalPrecision": 0.89,
+    "routingAccuracy": 0.87,
+    "resolutionAccuracy": 0.87,
+    "latencyMs": 833,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  },
+  {
+    "id": "INC-1040",
+    "title": "Kubernetes Pod CrashLoopBackOff",
+    "description": "AI monitoring detected an infrastructure anomaly. The Retriever Agent searched the knowledge base, the Analyzer classified the issue, and the Resolver generated an AI-assisted recommendation.",
+    "severity": "Medium",
+    "category": "Container",
+    "classification": "Availability",
+    "status": "Escalated",
+    "rootCause": "Reverse proxy configuration error.",
+    "aiResolution": "Increase database connection pool size.",
+    "recommendedActions": [
+      "Review service logs",
+      "Apply recommended fix",
+      "Monitor system health"
+    ],
+    "trello": {
+      "linked": true,
+      "cardTitle": "[INC-1040] Kubernetes Pod CrashLoopBackOff",
+      "status": "In Progress",
+      "board": "Enterprise AI Incident Board",
+      "cardUrl": "https://trello.com/c/inc-1040"
+    },
+    "createdAt": "2026-07-12T10:00:00Z",
+    "resolvedAt": null,
+    "retrievalPrecision": 0.97,
+    "routingAccuracy": 0.91,
+    "resolutionAccuracy": 0.96,
+    "latencyMs": 3444,
+    "agentFlow": {
+      "classifier": "Completed",
+      "retriever": "Completed",
+      "analyzer": "Completed",
+      "resolver": "Completed",
+      "trello": "Created"
+    }
+  }
+]
