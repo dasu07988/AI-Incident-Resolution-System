@@ -14,6 +14,7 @@ import { useDebounce } from "../../hooks/useDebounce";
 import { SEVERITY_ORDER, STATUS_ORDER } from "../../utils/severityConfig";
 import { formatDate } from "../../utils/formatDate";
 import { useEffect, useState } from "react";
+import { analyzeIncident } from "../../api/incidents.api";
 
 const COLUMNS = [
   { key: "id", label: "ID" },
@@ -29,7 +30,6 @@ export default function IncidentList() {
   const [searchInput, setSearchInput] = useState(filters.search);
   const debouncedSearch = useDebounce(searchInput, 350);
 
-  // Sync debounced search into shared filter state (resets to page 1).
   useEffect(() => {
     if (debouncedSearch !== filters.search) {
       updateFilters({ search: debouncedSearch });
@@ -39,22 +39,55 @@ export default function IncidentList() {
 
   const { items, total, totalPages, page, pageSize, loading } = useIncidents(filters);
 
+  // Temporary AI Test
+  const handleTest = async () => {
+    try {
+      const result = await analyzeIncident({
+        title: "Database Connection Failure",
+        description: "Users cannot connect to the production database.",
+        priority: "High",
+      });
+
+      console.log("AI Response:", result);
+
+      alert("✅ AI Workflow executed successfully!");
+    } catch (err) {
+      console.error(err);
+      alert("❌ Error: " + (err.response?.data?.message || err.message));
+    }
+  };
+
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap gap-3">
-        <SearchBar value={searchInput} onChange={setSearchInput} />
+
+      <div className="flex flex-wrap gap-3 items-center">
+
+        <button
+          onClick={handleTest}
+          className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+        >
+          Test AI
+        </button>
+
+        <SearchBar
+          value={searchInput}
+          onChange={setSearchInput}
+        />
+
         <FilterDropdown
           label="All severities"
           value={filters.severity}
           options={SEVERITY_ORDER}
           onChange={(v) => updateFilters({ severity: v })}
         />
+
         <FilterDropdown
           label="All statuses"
           value={filters.status}
           options={STATUS_ORDER}
           onChange={(v) => updateFilters({ status: v })}
         />
+
       </div>
 
       <Card padded={false}>
@@ -70,15 +103,26 @@ export default function IncidentList() {
           ) : (
             <Table columns={COLUMNS}>
               {items.map((incident) => (
-                <TableRow key={incident.id} onClick={() => navigate(`/incidents/${incident.id}`)}>
-                  <TableCell className="mono text-xs text-[var(--color-text-muted)]">{incident.id}</TableCell>
-                  <TableCell className="max-w-xs truncate font-medium">{incident.title}</TableCell>
+                <TableRow
+                  key={incident.id}
+                  onClick={() => navigate(`/incidents/${incident.id}`)}
+                >
+                  <TableCell className="mono text-xs text-[var(--color-text-muted)]">
+                    {incident.id}
+                  </TableCell>
+
+                  <TableCell className="max-w-xs truncate font-medium">
+                    {incident.title}
+                  </TableCell>
+
                   <TableCell>
                     <SeverityBadge severity={incident.severity} />
                   </TableCell>
+
                   <TableCell>
                     <StatusBadge status={incident.status} />
                   </TableCell>
+
                   <TableCell className="text-[var(--color-text-secondary)] text-xs">
                     {formatDate(incident.createdAt)}
                   </TableCell>
@@ -87,6 +131,7 @@ export default function IncidentList() {
             </Table>
           )}
         </div>
+
         <div className="px-5 pb-5">
           <Pagination
             page={page || filters.page}
@@ -97,6 +142,7 @@ export default function IncidentList() {
           />
         </div>
       </Card>
+
     </div>
   );
 }

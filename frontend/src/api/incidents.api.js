@@ -76,3 +76,11 @@ export async function getIncidentSummary() {
   const { data } = await axiosClient.get("/incidents/summary");
   return data;
 }
+export async function analyzeIncident(payload) {
+  const { data } = await axiosClient.post(
+    "/webhook/enterprise-ai-orchestrator",
+    payload
+  );
+
+  return data;
+}
