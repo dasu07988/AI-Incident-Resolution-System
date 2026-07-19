@@ -22,7 +22,7 @@ export default function Sidebar() {
     <aside className="w-60 shrink-0 border-r border-[var(--color-border)] bg-[var(--color-surface-1)] flex flex-col h-screen sticky top-0">
       <div className="flex items-center gap-2.5 px-5 h-16 border-b border-[var(--color-border)]">
   <img
-    src="/public/ai-incident-logo..svg"
+   src="/ai-incident-logo.svg"
     alt="Enterprise AI"
     className="h-8 w-8 object-contain"
   />
